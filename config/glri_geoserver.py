@@ -11,8 +11,7 @@ from py_geoserver_rest_requests.utilities import get_filename_from_path, get_ite
 from geoserver.catalog import Catalog
 from config.config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
 from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
-    
-file_path = os.path.dirname
+
 
 class GlriGeoserver(object):
     
@@ -73,12 +72,12 @@ class GlriGeoserver(object):
                                               shp_path, prms_animation, nhru
                                               )
             result_dict = {'datastore name': ds_name, 'create status code': create_ds}
-            report_str = ('Created datastore {datastore_name} on {tier_name}\n'
+            report_str = ('Created datastore {datastore_name} on {host_name}\n'
                           '\tWorkspace name: {workspace}\n'
                           '\tStatus Code: {create_ds_status}\n'
                           )
             config_ds_report = report_str.format(datastore_name=ds_name,
-                                                 tier_name=self.tier_name,
+                                                 host_name=self.host,
                                                  workspace=workspace,
                                                  create_ds_status=create_ds.status_code
                                                  )
@@ -105,7 +104,7 @@ class GlriGeoserver(object):
                         'recalc feature': recalc_feature,
                         'change layer style': change_layer_style
                         }
-            report_str = ('Created layer {layer_name} on {tier_name}\n'
+            report_str = ('Created layer {layer_name} on {host_name}\n'
                           '\tWorkspace name: {workspace}\n'
                           '\tDatastore name: {datastore}\n'
                           '\tPost feature status: {post_feature_status}\n'
@@ -113,7 +112,7 @@ class GlriGeoserver(object):
                           '\tChange layer style status: {change_style_status}\n'
                           )
             config_lyr_report = report_str.format(layer_name=layer,
-                                                  tier_name=self.tier_name,
+                                                  host_name=self.host,
                                                   workspace=gsl.workspace_name,
                                                   datastore=gsl.ds_name,
                                                   post_feature_status=post_feature.status_code,
@@ -197,7 +196,7 @@ class GlriAfinch(object):
             feature_styling_xml = layer.create_lyr_style_xml(style_name=afinch_layer.styles)
             update_style = layer.modify_layer_style(feature_styling_xml)
             
-            message_template = ('Created {layer} on {tier_name}\n'
+            message_template = ('Created {layer} on {host_name}\n'
                                 '\tWorkspace name: {workspace}\n'
                                 '\tDatastore name: {datastore}\n'
                                 '\tCreate datastore: {ds_create_status}\n'
@@ -206,7 +205,7 @@ class GlriAfinch(object):
                                 '\tUpdate styling: {update_style_status}\n'
                                 )
             report_message = message_template.format(layer=lyr_name,
-                                                     tier_name=self.tier_name,
+                                                     host_name=self.host,
                                                      datastore=store_name,
                                                      workspace=workspace,
                                                      ds_create_status=create_ds.status_code,
@@ -263,7 +262,7 @@ class GlriAfinch(object):
             recalc_feature = gsl.modify_feature_type(feature_xml, True)
             change_lyr_style_xml = gsl.create_lyr_style_xml(style)
             change_lyr_style = gsl.modify_layer_style(change_lyr_style_xml)
-            lyr_config_str = ('Configuration of layer {layer_name} on {tier_name}\n'
+            lyr_config_str = ('Configuration of layer {layer_name} on {host_name}\n'
                               '\tWorkspace name: {workspace}\n'
                               '\tDatastore name: {datastore}\n'
                               '\tCreated datastore: {datastore_status}\n'
@@ -272,7 +271,7 @@ class GlriAfinch(object):
                               '\tChanged Layer Style: {change_style_status}\n'
                               )
             lyr_config_report = lyr_config_str.format(layer_name=layer_name,
-                                                      tier_name=self.tier_name,
+                                                      host_name=self.host,
                                                       workspace=workspace_name,
                                                       datastore=gsds.ds_name,
                                                       datastore_status=create_ds.status_code,
@@ -296,14 +295,14 @@ class GlriAfinch(object):
                                                    huc_workspace, layer_name,
                                                    huc_shp_path, desc
                                                    )
-        create_huc_ds_status_template = ('Created datastore {ds_name} on {tier_name}\n'
+        create_huc_ds_status_template = ('Created datastore {ds_name} on {host_name}\n'
                                          '\tWorkspace name: {workspace}\n'
                                          '\tShapefile path: {shp_path}\n'
                                          '\tStyle: {style}\n'
                                          '\tStatus code: {status_code}\n'
                                          )
         ds_create_message = create_huc_ds_status_template.format(ds_name=layer_name,
-                                                                 tier_name=self.tier_name,
+                                                                 host_name=self.host,
                                                                  workspace=huc_workspace,
                                                                  shp_path=huc_shp_path,
                                                                  style=huc_shp_style,
@@ -332,11 +331,11 @@ class GlriAfinch(object):
                                                 max_y=max_y
                                                 )
         post_lyr_grp = gsw.create_ws_layer_grp(lyr_grp_xml)
-        report_str = ('Posted layer group xml for {lyr_grp_name} on {tier_name}\n'
+        report_str = ('Posted layer group xml for {lyr_grp_name} on {host_name}\n'
                       '\tStatus Code: {status_code}\n'
                       )
         post_report = report_str.format(lyr_grp_name=lyr_grp_name,
-                                        tier_name=self.tier_name, 
+                                        host_name=self.host, 
                                         status_code=post_lyr_grp.status_code
                                         )
         print(post_report)
