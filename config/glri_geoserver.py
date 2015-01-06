@@ -14,6 +14,16 @@ from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
 
 
 class GlriGeoserver(object):
+    """
+    This class contains methods for the configuration
+    of the glri workspace on GLRI GeoServer instances.
+    
+    :param str host: geoserver rest URL
+    :param str user: geoserver username
+    :param str password: geoserver password
+    :param str tier_name: tier of the geoserver instance (e.g. local, dev, qa, prod)
+    
+    """
     
     file_path = os.path.abspath(os.path.dirname(__file__))
     abs_path = os.path.abspath(os.path.dirname(file_path))
@@ -26,6 +36,17 @@ class GlriGeoserver(object):
         
     def config_workspaces(self, workspace_names, person, email,
                           org_name='USGS Center for Integrated Data Analytics'):
+        """
+        Create the workspaces
+        
+        :param list workspace_names: list of workspace names to be created
+        :param str person: person responsible for the workspace
+        :param str email: person's email address
+        :param str org_name: name of organization that the person works for
+        :return: list of requests objects
+        :rtype: list
+        
+        """
         ws_config_requests = []
         for workspace_name in workspace_names:
             setup_ws = setup_workspace(self.host, self.user, self.password,
@@ -36,6 +57,14 @@ class GlriGeoserver(object):
         return ws_config_requests
     
     def config_styles(self, sld_path='/files/slds/glri/*.sld'):
+        """
+        Create SLDs within GeoServer.
+        
+        :param str sld_path: path to sld files relative to the project directory
+        :return: list of strings reporting post/overwrite statuses
+        :rtype: list
+        
+        """
         catalog = Catalog(self.host, self.user, self.password, True)
         sld_path = '{0}{1}'.format(self.abs_path, sld_path)
         norm_sld_path = os.path.normpath(sld_path)
@@ -59,6 +88,15 @@ class GlriGeoserver(object):
         return configured_styles
     
     def config_datastores(self, datastores):
+        """
+        Configure glri datastores.
+        
+        :param datastores: list of dictionaries containing datastore parameters
+        :type datastores: list of dictionaries
+        :return: list of dictionaries containing the datastore name (datstore_name) and request object (ds_request)
+        :rtype: list
+        
+        """
         config_ds_requests = []
         for datastore in datastores:
             workspace = datastore['workspace']
@@ -71,7 +109,7 @@ class GlriGeoserver(object):
                                               workspace, ds_type, ds_name, 
                                               shp_path, prms_animation, nhru
                                               )
-            result_dict = {'datastore name': ds_name, 'create status code': create_ds}
+            result_dict = {'datastore_name': ds_name, 'ds_request': create_ds}
             report_str = ('Created datastore {datastore_name} on {host_name}\n'
                           '\tWorkspace name: {workspace}\n'
                           '\tStatus Code: {create_ds_status}\n'
@@ -85,13 +123,26 @@ class GlriGeoserver(object):
             config_ds_requests.append(result_dict)
         return config_ds_requests
     
-    def config_layers(self, layers, layer_styles, projection, workspace_name='glri'):
+    def config_layers(self, layers, layer_styles, projection, 
+                      workspace_name='glri', datastore_name='annual_animation_feb2014'):
+        """
+        Configure glri layers.
+        
+        :param list layers: list of layers to be created
+        :param list layer_styles: styles that the layers should be published with
+        :param str projection: projection that should be used for the feature type
+        :param str workspace_name: workspace that the layers belong to
+        :param str datastore_name: datastore that the layers belong to
+        :return: list of dictionaries containing request objects
+        :rtype: list
+        
+        """
         lyr_config_requests = []
         for layer in layers:
             gsl = GeoServerLayers(gs_host=self.host, gs_user=self.user, 
                                   gs_password=self.password, 
                                   workspace_name=workspace_name, 
-                                  datastore_name='annual_animation_feb2014', 
+                                  datastore_name=datastore_name, 
                                   lyr_name=layer
                                   )
             feature_type_xml = gsl.create_feature_type_xml(native_name=layer, native_crs=projection)
@@ -125,6 +176,17 @@ class GlriGeoserver(object):
     
     
 class GlriAfinch(object):
+    """
+    This class contains methods for the configuration
+    of the glri-afinch, NHDPlusFlowlines, and NHDPlusHUCs 
+    workspaces on GLRI GeoServer instances.
+    
+    :param str host: geoserver rest URL
+    :param str user: geoserver username
+    :param str password: geoserver password
+    :param str tier_name: tier of the geoserver instance (e.g. local, dev, qa, prod)
+    
+    """
     
     file_path = os.path.abspath(os.path.dirname(__file__))
     abs_path = os.path.abspath(os.path.dirname(file_path))
@@ -139,14 +201,49 @@ class GlriAfinch(object):
                                          )
         
     def config_workspaces(self, workspace_names, person, email):
+        """
+        Configure workspaces.
+        
+        :param list workspace_names: list of workspace names to be created
+        :param str person: person responsible for the workspace
+        :param str email: person's email address
+        :return: list of requests objects
+        :rtype: list
+        
+        .. note:: composition of GlriGeoserver.config_workspaces
+        .. seealso:: :classmethod:'GlriGeoserver.config_workspaces'
+        
+        """
         config_ws = self.glri_config.config_workspaces(workspace_names, person, email)
         return config_ws
     
     def config_afinch_styles(self, sld_path='/files/slds/afinch/*.sld'):
+        """
+        Create SLDs within GeoServer.
+        
+        :param str sld_path: path to sld files relative to the project directory
+        :return: list of strings reporting post/overwrite statuses
+        :rtype: list
+        
+        .. note:: composition of GlriGeoserver.config_styles
+        .. seealso:: :classmethod:'GlriGeoserver.config_styles'
+        
+        """
         config_styles = self.glri_config.config_styles(sld_path)
         return config_styles
     
     def create_glri_afinch_layers(self, afinch_layers):
+        """
+        Configure GLRI AFINCH layers.
+        
+        :param afinch_layers: AFINCH layer names and parameters
+        :type afinch_layers: list of namedtuples, nametuples should contain the following attributes: 
+                             workspace, lyr_name, native_name, native_srs, declared_srs, proj_policy, styles, store_type,
+                             store_name, desc, shp_file, dbase_file, netcdf_file, join_field, station
+        :return: dictionaries containing requests objects from datastore creation, feature type creation, recalculation, and updating styles
+        :rtype: list
+        
+        """
         all_results = []
         for afinch_layer in afinch_layers:
             workspace = afinch_layer.workspace
@@ -229,6 +326,20 @@ class GlriAfinch(object):
                                   workspace_name='NHDPlusFlowlines', 
                                   join_field='COMID', 
                                   description='NHDFlowlines'):
+        """
+        Setup datastores and layers for NHDPlusFlowlines.
+        
+        :param path_list: paths to the shapefile and dbf file
+        :type path_list: list of namedtuples with the attributes: region, subregion, shp_path, dbf_path
+        :param style: styles of the NHDPlusFlowline layers
+        :type style: str or list or tuple
+        :param str workspace_name: name of the workspace the datastore and layers should be created in
+        :param str join_field: name of join field between the shapefile and dbf file
+        :param str description: description of the layer
+        :return: dictionaries of requests objects for datastore creation, layer creation, bounding box recalculation, and style modification
+        :rtype: list
+        
+        """
         result_list = []
         for path_tuple in path_list:
             subregion = path_tuple.subregion
@@ -290,6 +401,21 @@ class GlriAfinch(object):
     
     def create_nhdhuc_layers(self, huc_workspace, huc_shp_path, huc_shp_style, 
                              native_projection='EPSG:4269', desc='shapefile'):
+        """
+        Create datastores and layers for the NHDPlusHUCs workspace.
+        
+        :param str huc_workspace: workspace where the datastores and layers should live
+        :param str huc_shp_path: absolute path to the HUC shapefile on the server
+        :param huc_shp_style: style(s) that should be associated with HUC layers
+        :type huc_shp_style: str or list or tuple
+        :param str native_projection: native projection of the HUC shapefile
+        :param str desc: description for the layer
+        :return: requests.request object from datastore and layer (this is a dictionary) creation
+        :rtype: tuple
+        
+        .. note:: layer creation execution via composition from GlriGeoServer.config_layers
+        
+        """
         layer_name = get_filename_from_path(huc_shp_path, '.shp')
         create_huc_ds = create_shapefile_datastore(self.host, self.user, self.pwd,
                                                    huc_workspace, layer_name,
@@ -317,8 +443,26 @@ class GlriAfinch(object):
         return create_huc_ds, create_huc_lyr
     
     def config_nhdflowline_lyr_grp(self, workspace_name, lyr_grp_name, 
-                                   style, search='PlusFlowlineVAA', 
+                                   style, search='PlusFlowlineVAA',
+                                   generate_bounds=False, 
                                    min_x='0', max_x='0', min_y='0', max_y='0'):
+        """
+        Create Flowlines layer group.
+        
+        :param str workspace_name: name of the workspace where the layer group should live
+        :param str lyr_grp_name: name of the layer group
+        :param style: style or styles that should be associated with the layer group
+        :type style: str or list or tuple
+        :param str search: fragment of layer names that should be included in the layer group
+        :param bool generate_bounds: boolean to decide whether or not to generate bounds for the layer group
+        :param str min_x: min x bound
+        :param str max_x: max x bound
+        :param str min_y: min y bound
+        :param str max_y: max y bound
+        :return: requests object from layer group creation
+        :rtype: requests.request
+        
+        """
         gsw = GeoServerWorkspace(self.host, self.user, self.pwd, workspace_name)
         existing_layers = gsw.get_ws_layers()
         interesting_layers = get_items_of_interest(existing_layers, search)
@@ -330,7 +474,7 @@ class GlriAfinch(object):
                                                 min_y=min_y, 
                                                 max_y=max_y
                                                 )
-        post_lyr_grp = gsw.create_ws_layer_grp(lyr_grp_xml)
+        post_lyr_grp = gsw.create_ws_layer_grp(lyr_grp_xml, generate_bounds)
         report_str = ('Posted layer group xml for {lyr_grp_name} on {host_name}\n'
                       '\tStatus Code: {status_code}\n'
                       )
