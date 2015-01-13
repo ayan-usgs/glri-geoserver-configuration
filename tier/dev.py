@@ -9,12 +9,6 @@ from global_constants import (DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING,
                               GCS_N_AMERICA_1983, PRMS_CUSTOM_PROJECTION)
 
 
-PathTuple = namedtuple('PathTuple', ['region', 
-                                     'subregion', 
-                                     'shp_path', 
-                                     'dbf_path'
-                                     ]
-                       )
 AfinchLayer = namedtuple('AfinchLayer', ['workspace', 
                                          'lyr_name',
                                          'native_name', 
@@ -33,7 +27,7 @@ AfinchLayer = namedtuple('AfinchLayer', ['workspace',
                                          ]
                          )
 WORKSPACE_NAMES = ['glri']
-AFINCH_WORKSPACES = ['NHDPlusFlowlines', 
+AFINCH_WORKSPACES = [#'NHDPlusFlowlines', 
                      #'NHDPlusHUCs', 
                      'NHDCatchments', 
                      'glri-afinch'
@@ -84,34 +78,6 @@ GLRI_PRMS_SLDS = ['polygon',
                   'snowmelt', 
                   'hru_streamflow_out'
                   ]
-
-NHDFLOWLINE_STYLES = [{'style': 'line', 'name': 'PlusFlowlineVAA_NHDPlus-line'},
-                      {'style': 'FlowlineStreamOrder', 'name': 'PlusFlowlineVAA_NHDPlus-StreamOrder'}
-                      ]
-
-
-NHDFLOWLINE_PATHS = [PathTuple(region='NHDPlusCA', subregion='NHDPlus18', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCA/NHDPlus18/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCA/NHDPlus18/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusCO', subregion='NHDPlus14', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCO/NHDPlus14/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCO/NHDPlus14/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusCO', subregion='NHDPlus15', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCO/NHDPlus15/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusCO/NHDPlus15/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusGB', subregion='NHDPlus16', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusGB/NHDPlus16/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusGB/NHDPlus16/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusGL', subregion='NHDPlus04', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusGL/NHDPlus04/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusGL/NHDPlus04/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMA', subregion='NHDPlus02', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMA/NHDPlus02/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMA/NHDPlus02/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus05', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus05/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus05/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus06', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus06/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus06/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus07', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus07/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus07/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus08', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus08/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus08/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus10L', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus10L/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus10L/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus10U', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus10U/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus10U/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusMS', subregion='NHDPlus11', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus11/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusMS/NHDPlus11/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusNE', subregion='NHDPlus01', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusNE/NHDPlus01/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusNE/NHDPlus01/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusPN', subregion='NHDPlus17', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusPN/NHDPlus17/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusPN/NHDPlus17/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusRG', subregion='NHDPlus13', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusRG/NHDPlus13/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusRG/NHDPlus13/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusSA', subregion='NHDPlus03N', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03N/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03N/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusSA', subregion='NHDPlus03S', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03S/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03S/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusSA', subregion='NHDPlus03W', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03W/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSA/NHDPlus03W/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusTX', subregion='NHDPlus12', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusTX/NHDPlus12/NHDSnapshot/Hydrography/NHDFlowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusTX/NHDPlus12/NHDPlusAttributes/PlusFlowlineVAA.dbf'), 
-                     PathTuple(region='NHDPlusSR', subregion='NHDPlus09', shp_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSR/NHDPlus09/NHDSnapshot/Hydrography/nhdflowline.shp', dbf_path='/opt/tomcat/data/nhdPlusV2_catchments_flowlines/NHDPlusSR/NHDPlus09/NHDPlusAttributes/PlusFlowlineVAA.dbf')
-                    ]
 
 AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1], 
                              lyr_name='GageLoc',
