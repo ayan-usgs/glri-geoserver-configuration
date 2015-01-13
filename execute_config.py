@@ -47,19 +47,5 @@ if __name__ == '__main__':
     # configure AFINCH SLDs
     afinch_style = afinch_gs.config_afinch_styles()
     # configure AFINCH layers and datastores
-    flowline_styles = c.NHDFLOWLINE_STYLES
-    flowline_style = flowline_styles[0]['style']
-    afinch_ds_lyr = afinch_gs.create_nhdflowline_layers(path_list=c.NHDFLOWLINE_PATHS,
-                                                        style=flowline_style
-                                                        )
-    for nhd_style in c.NHDFLOWLINE_STYLES:
-        style = nhd_style['style']
-        lyr_grp_name = nhd_style['name']
-        afinch_lyr_grp = afinch_gs.config_nhdflowline_lyr_grp(workspace_name='NHDPlusFlowlines', 
-                                                              lyr_grp_name=lyr_grp_name, 
-                                                              style=style
-                                                              )
     # configure glri-afinch workspace layers
     glri_afinch_layers = afinch_gs.create_glri_afinch_layers(c.AFINCH_LAYERS)
-    # configure flowline layers
-    afinch_flowlines = afinch_gs.create_nhdflowline_layers(c.NHDFLOWLINE_PATHS, 'line')
