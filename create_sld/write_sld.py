@@ -2,7 +2,7 @@ from lxml import etree
 
 
 class SldOgcAttributes(object):
-    
+
     """
     Define useful OGC SLD attributes
     """

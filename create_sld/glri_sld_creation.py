@@ -8,10 +8,10 @@ from parse_animations.utils import get_filenames_from_directory
 from parse_animations.headers import ANIMATION_HEADERS
 from tier.global_constants import PRMS_CUSTOM_PROJECTION
 
-
-# colors (red, orange, yellow, yellow-green, green, blue, indigo, dark-violet) 
-COLORS = ('#FF0000', '#FFA500', '#FFFF00', '#9ACD32', '#008000', '#0000FF', '#4B0082', '#9400D3')
-PERCENTILES = [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+# spectrum from red to green
+COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', 'F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
+# 10 percentile bins
+PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
 
 def create_layer_names(directory_path, extension='*.nhru', existing_lyrs=None):
