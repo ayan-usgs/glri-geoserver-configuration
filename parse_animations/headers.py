@@ -13,3 +13,17 @@ ANIMATION_HEADERS = ['timestamp',
                      'snowmelt', 
                      'hru_streamflow_out'
                      ]
+
+ATTRIBUTE_UNITS = {'soil_moist': 'in',
+                   'recharge': 'in',
+                   'hru_ppt': 'in',
+                   'hru_rain': 'in',
+                   'hru_snow': 'in',
+                   'tminf': '&#176;F',
+                   'tmaxf': '&#176;F',
+                   'potet': 'in',
+                   'hru_actet': 'in',
+                   'pkwater_equiv': 'in',
+                   'snowmelt': 'in',
+                   'hru_streamflow_out': 'cfs'
+                   }

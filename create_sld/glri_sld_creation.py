@@ -5,7 +5,7 @@ from create_sld.write_sld import LxmlSLDAttrBins
 from create_sld.utils import write_to_file
 from parse_animations.statistics import PandasStats, SldBins
 from parse_animations.utils import get_filenames_from_directory
-from parse_animations.headers import ANIMATION_HEADERS
+from parse_animations.headers import ANIMATION_HEADERS, ATTRIBUTE_UNITS
 from tier.global_constants import PRMS_CUSTOM_PROJECTION
 
 # spectrum from red to green
@@ -53,8 +53,9 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
     return result_list
 
 
-def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', column_names=ANIMATION_HEADERS, 
-                    percentiles=PERCENTILES, colors=COLORS):
+def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', 
+                    column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
+                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS):
     slds = []
     files = get_filenames_from_directory(directory, extension)
     ps = PandasStats(file_pathnames=files, column_names=column_names, skiprows=21)
@@ -77,7 +78,9 @@ def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', column_
                                                               reverse_coloring=False
                                                               )
         sld = LxmlSLDAttrBins(style)
-        sld_content = sld.write_sld(sld_bin_dict=sld_b_with_colors)
+        sld_content = sld.write_sld(sld_bin_dict=sld_b_with_colors, 
+                                    attribute_units=attribute_units
+                                    )
         sld_name = '%s' % attribute_name 
         sld_data = {'sld_name': sld_name, 'sld_content': sld_content}
         slds.append(sld_data)
