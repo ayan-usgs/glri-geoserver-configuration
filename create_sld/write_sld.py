@@ -1,25 +1,5 @@
-from sld import StyledLayerDescriptor
 from lxml import etree
 
-# this function is deprecated
-# python-sld was found to be lacking
-def write_sld_xml(layer_name, style_title=None, rule_name=None):
-    
-    """
-    Write an SLD using the python-sld
-    package.
-    """
-    
-    sld_content = StyledLayerDescriptor()
-    named_lyr = sld_content.create_namedlayer(name=layer_name)
-    usr_style = named_lyr.create_userstyle()
-    if style_title is not None:
-        usr_style.Title = style_title
-    feature_type_style = usr_style.create_featuretypestyle()
-    if rule_name is not None:
-        feature_type_style.create_rule(title=rule_name)
-    
-    return sld_content
 
 class SldOgcAttributes(object):
     
