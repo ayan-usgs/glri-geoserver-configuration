@@ -5,9 +5,9 @@ Created on Dec 9, 2014
 '''
 import os
 import glob
-from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore, GeoServerWorkspace
+from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore
 from py_geoserver_rest_requests.map_services import WFS, WCS, WMS
-from py_geoserver_rest_requests.utilities import get_filename_from_path, get_items_of_interest
+from py_geoserver_rest_requests.utilities import get_filename_from_path
 from geoserver.catalog import Catalog
 from config.config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
 from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
