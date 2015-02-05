@@ -1,5 +1,4 @@
-from py_geoserver_rest_requests import GeoServerLayers
-from py_geoserver_rest_requests import GeoServerStyles
+from py_geoserver_rest_requests import GeoServerLayers, GeoServerStyles
 from py_geoserver_rest_requests.utilities import get_filename_from_path
 from create_sld.write_sld import LxmlSLDAttrBins
 from create_sld.utils import write_to_file
