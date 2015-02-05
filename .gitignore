@@ -1,3 +1,5 @@
 /local_params.py
 /secure_params.py
 *.pyc
+.project
+.pydevproject
