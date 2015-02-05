@@ -51,7 +51,7 @@ class LxmlSLDAttrBins(object):
         elif self.symbolizer_lower == 'polygon':
             self.symbolizer_attr = 'PolygonSymbolizer'
         else:
-            raise Exception('Cannot recognized symbolizer type...')
+            raise Exception('Cannot recognize symbolizer type...')
         
     def write_sld(self, sld_bin_dict, attribute_units, pretty_print=False, lyr_name=None, usr_style_title_text=None):
         

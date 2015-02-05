@@ -18,6 +18,10 @@ def create_layer_names(directory_path, extension='*.nhru', existing_lyrs=None):
     Returns a list of layer names based on the names of 
     animation files.
     
+    :param str directory_path: path to a local copy of the animation files
+    :param str extension: extension of the animation files
+    :param list existing_lyrs: list of animation layers in GeoServer that should be left alone
+    
     """
     filenames = get_filenames_from_directory(directory_path, extension)
     layer_names = []
