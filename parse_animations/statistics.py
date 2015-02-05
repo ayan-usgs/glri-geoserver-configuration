@@ -121,7 +121,7 @@ class SldBins(object):
         self.upper_range_limit = len(self.data.pct_values) + 2
         self.bin_no_range = range(1, self.upper_range_limit)
         
-    def _convert_to_rounded_string(self, numeric_value, ndigits=5):
+    def _convert_to_rounded_string(self, numeric_value, ndigits=3):
         """
         Round a number to the specified number of
         decimal places. Handles ValueError and

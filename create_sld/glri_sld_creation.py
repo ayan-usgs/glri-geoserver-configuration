@@ -5,13 +5,13 @@ from create_sld.write_sld import LxmlSLDAttrBins
 from create_sld.utils import write_to_file
 from parse_animations.statistics import PandasStats, SldBins
 from parse_animations.utils import get_filenames_from_directory
-from parse_animations.headers import ANIMATION_HEADERS
+from parse_animations.headers import ANIMATION_HEADERS, ATTRIBUTE_UNITS
 from tier.global_constants import PRMS_CUSTOM_PROJECTION
 
-
-# colors (red, orange, yellow, yellow-green, green, blue, indigo, dark-violet) 
-COLORS = ('#FF0000', '#FFA500', '#FFFF00', '#9ACD32', '#008000', '#0000FF', '#4B0082', '#9400D3')
-PERCENTILES = [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+# spectrum from red to green
+COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', 'F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
+# 10 percentile bins
+PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
 
 def create_layer_names(directory_path, extension='*.nhru', existing_lyrs=None):
@@ -53,8 +53,9 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
     return result_list
 
 
-def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', column_names=ANIMATION_HEADERS, 
-                    percentiles=PERCENTILES, colors=COLORS):
+def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', 
+                    column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
+                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS):
     slds = []
     files = get_filenames_from_directory(directory, extension)
     ps = PandasStats(file_pathnames=files, column_names=column_names, skiprows=21)
@@ -77,7 +78,9 @@ def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', column_
                                                               reverse_coloring=False
                                                               )
         sld = LxmlSLDAttrBins(style)
-        sld_content = sld.write_sld(sld_bin_dict=sld_b_with_colors)
+        sld_content = sld.write_sld(sld_bin_dict=sld_b_with_colors, 
+                                    attribute_units=attribute_units
+                                    )
         sld_name = '%s' % attribute_name 
         sld_data = {'sld_name': sld_name, 'sld_content': sld_content}
         slds.append(sld_data)

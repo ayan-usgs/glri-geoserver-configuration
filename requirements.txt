@@ -1,6 +1,14 @@
-geoserver-rest-requests==0.3.0
+-e git+http://cida-eros-stash.er.usgs.gov:7990/stash/scm/gsc/py_geoserver_rest.git@80a9f2cd754835aac98434794eba8b128ed68927#egg=geoserver_rest_requests-master
 gisdata==0.5.4
-gsconfig==0.6.11
+gsconfig==0.6.12
 httplib2==0.9
-lxml==3.4.0
-requests==2.4.3
+lxml==3.4.1
+mock==1.0.1
+numexpr==2.4
+numpy==1.9.1
+pandas==0.15.2
+python-dateutil==2.4.0
+python-sld==1.0.10
+pytz==2014.10
+requests==2.5.1
+six==1.9.0

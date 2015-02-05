@@ -2,7 +2,7 @@ from lxml import etree
 
 
 class SldOgcAttributes(object):
-    
+
     """
     Define useful OGC SLD attributes
     """
@@ -53,9 +53,14 @@ class LxmlSLDAttrBins(object):
         else:
             raise Exception('Cannot recognized symbolizer type...')
         
-    def write_sld(self, sld_bin_dict, pretty_print=False, lyr_name=None, usr_style_title_text=None):
+    def write_sld(self, sld_bin_dict, attribute_units, pretty_print=False, lyr_name=None, usr_style_title_text=None):
         
         attribute_name = sld_bin_dict['attribute']
+        try:
+            attribute_unit = attribute_units[attribute_name]
+        except KeyError:
+            attribute_missing = 'There is no unit specified for %s.' % attribute_name
+            raise Exception(attribute_missing) 
         
         sld = etree.Element(self.SLD + 'StyledLayerDescriptor', version=self.version, attrib=self.schema_location, nsmap=self.NSMAP)  
         
@@ -105,7 +110,7 @@ class LxmlSLDAttrBins(object):
                 ogc_literal.text = lower_limit
             else:
                 filter_title = etree.SubElement(sld_rule, 'Title')
-                filter_title.text = '%s to %s' % (lower_limit, upper_limit)
+                filter_title.text = '%s to %s %s' % (lower_limit, upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
                 ogc_prop_gte = etree.SubElement(ogc_and, self.oa.prop_gte)
@@ -140,7 +145,17 @@ class LxmlSLDAttrBins(object):
                 css_param_stroke = etree.SubElement(stroke, 'CssParameter', {'name':'stroke'})
                 css_param_stroke.text = bin_hex_color
                 css_param_stroke_width = etree.SubElement(stroke, 'CssParameter', {'name':'width'})
-                css_param_stroke_width.text = '3'  
+                css_param_stroke_width.text = '3'
+        # filter out Lake Michigan
+        lake_mi_rule = etree.SubElement(feature_type_style, 'Rule')
+        lake_mi_name = etree.SubElement(lake_mi_rule, 'Name')
+        lake_mi_name.text = 'exclude_lake_michigan'
+        lake_mi_filter = etree.SubElement(lake_mi_rule, self.oa.filter)
+        lake_mi_prop = etree.SubElement(lake_mi_filter, self.oa.prop_nte)
+        lake_mi_prop_name = etree.SubElement(lake_mi_prop, self.oa.prop_name)
+        lake_mi_prop_name.text = 'GRIDCODE'
+        lake_mi_literal = etree.SubElement(lake_mi_prop, self.oa.literal)
+        lake_mi_literal.text = '47'
         
         sld_content = etree.tostring(sld, pretty_print=pretty_print)
         
