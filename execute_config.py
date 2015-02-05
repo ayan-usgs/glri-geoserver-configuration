@@ -5,7 +5,7 @@ Created on Jan 5, 2015
 '''
 
 import argparse
-from secure_params import HOST, USER, PASSWORD
+from secure_params import USER, PASSWORD
 from config.glri_geoserver import GlriGeoserver, GlriAfinch
 
 if __name__ == '__main__':
@@ -23,6 +23,8 @@ if __name__ == '__main__':
         from tier import prod as c
     else:
         raise Exception('Invalid tier name specified.')
+    
+    HOST = c.HOST
     
     # configure GLRI geoserver workspaces, styles, datastores, and layers
     config_glri_gs = GlriGeoserver(HOST, USER, PASSWORD, tier_name)

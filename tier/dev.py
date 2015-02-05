@@ -9,6 +9,9 @@ from global_constants import (DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING,
                               GCS_N_AMERICA_1983, PRMS_CUSTOM_PROJECTION)
 
 
+HOST = 'http://cida-eros-glridev.er.usgs.gov:8081/glri-geoserver/rest'
+
+
 AfinchLayer = namedtuple('AfinchLayer', ['workspace', 
                                          'lyr_name',
                                          'native_name', 

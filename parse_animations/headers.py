@@ -1,0 +1,15 @@
+ANIMATION_HEADERS = ['timestamp', 
+                     'nhru', 
+                     'soil_moist', 
+                     'recharge', 
+                     'hru_ppt', 
+                     'hru_rain', 
+                     'hru_snow', 
+                     'tminf', 
+                     'tmaxf', 
+                     'potet', 
+                     'hru_actet', 
+                     'pkwater_equiv', 
+                     'snowmelt', 
+                     'hru_streamflow_out'
+                     ]
