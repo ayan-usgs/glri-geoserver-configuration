@@ -145,7 +145,12 @@ class LxmlSLDAttrBins(object):
                 css_param_stroke = etree.SubElement(stroke, 'CssParameter', {'name':'stroke'})
                 css_param_stroke.text = bin_hex_color
                 css_param_stroke_width = etree.SubElement(stroke, 'CssParameter', {'name':'width'})
-                css_param_stroke_width.text = '3'  
+                css_param_stroke_width.text = '3'
+        # filter out Lake Michigan
+        lake_mi_rule = etree.SubElement(feature_type_style, 'Rule')
+        lake_mi_name = etree.SubElement(lake_mi_rule, 'Name')
+        lake_mi_name.text = 'exclude_lake_michigan'
+        lake_mi_filter = etree.SubElement(lake_mi_rule, self.oa.filter)
         
         sld_content = etree.tostring(sld, pretty_print=pretty_print)
         
