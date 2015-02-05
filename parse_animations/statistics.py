@@ -10,6 +10,15 @@ class PandasStats(object):
     list of csv files and calculate some 
     statistics.
     
+    This class is instantiated with the following
+    parameters:
+    
+    :param list file_pathnames: list of full file pathnames
+    :param list column_names: list of column names in the csv files
+    :param int skiprows: number of rows to skip at the beginning of a file
+    :param str comment: character that is used in the csv to denote a comment
+    :param str delimiter: delimiter used in the csv
+    
     """
     ResultTuple = ResultNamedTuple
     
@@ -51,6 +60,13 @@ class PandasStats(object):
         """
         Calculate the mean of a column or columns in a dataframe.
         
+        :param pandas.DataFrame dataframe: a pandas dataframe object
+        :param list column_names: list of columns that should have their averages calculated
+        :param int axis: axis of dataframe that the average should be calculated on
+        :param bool skip_nans: specify whether nans should be included in the average
+        :return: mean of the dataframe columns
+        :rtype: pandas.Series
+        
         """
         if column_names is not None:
             df_mean = dataframe[column_names].mean(axis=axis, skipna=skip_nans)
@@ -61,6 +77,13 @@ class PandasStats(object):
     def calculate_df_min(self, dataframe, column_names=None, axis=0, skip_nans=True):
         """
         Calculate the min of a column or columns in a dataframe
+        
+        :param pandas.DataFrame dataframe: a pandas dataframe object
+        :param list column_names: list of columns that should have their min determined
+        :param int axis: axis of dataframe that the min should be calculated on
+        :param bool skip_nans: specify whether nans should be included in the min
+        :return: mininum value of the dataframe columns
+        :rtype: pandas.Series
         
         """
         if column_names is not None:
@@ -73,6 +96,13 @@ class PandasStats(object):
         """
         Calculate the max of a column or columns in a dataframe
         
+        :param pandas.DataFrame dataframe: a pandas dataframe object
+        :param list column_names: list of columns that should have their max determined
+        :param int axis: axis of dataframe that the max should be calculated on
+        :param bool skip_nans: specify whether nans should be included in the max
+        :return: maximum value of the dataframe columns
+        :rtype: pandas.Series
+        
         """
         if column_names is not None:
             df_max = dataframe[column_names].max(axis=axis, skipna=skip_nans)
@@ -84,6 +114,12 @@ class PandasStats(object):
         """
         Run a describe on the dataframe for the specified columns
         for percentiles that are requested.
+        
+        :param pandas.DataFrame dataframe: a pandas DataFrame
+        :param list percentiles: a list of floats representing the percentiles that should be calculated
+        :param list column_names: columns that should have percentiles calculated
+        :return: percentiles for the columns specified for the dataframe
+        :rtype: pandas.DataFrame 
         
         """
         if column_names is not None:
@@ -98,8 +134,14 @@ class PandasStats(object):
     
     def parse_describe(self, describe_df, column_list, range_start, range_end):
         """
-        range_start is the first of interest,
-        range_end is the last row of interest
+        Parse a dataframe containing percentiles
+        
+        :param pandas.DataFrame describe_df: the dataframe returned from pandas.DataFrame.describe()
+        :param list column_list: columns that should have their percentiles parsed out
+        :param int range_start: dataframe index for the first row of interest,
+        :param int range_end: dataframe index for the last row of interest
+        :return: percentiles for each column
+        :rtype: list of collections.namedtuple
         
         """
         indexes = range(range_start, range_end)
@@ -121,6 +163,8 @@ class SldBins(object):
     should have the following attributes: 'attributes', 'pct_values'.
     The PandasStats.parse_describe method is able to create such
     a list.
+    
+    :param collections.namedtuple data: list containing tuples with attribute name and percentiles
     
     """
     BinSize = BinSizeNamedTuple
