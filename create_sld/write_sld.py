@@ -151,6 +151,11 @@ class LxmlSLDAttrBins(object):
         lake_mi_name = etree.SubElement(lake_mi_rule, 'Name')
         lake_mi_name.text = 'exclude_lake_michigan'
         lake_mi_filter = etree.SubElement(lake_mi_rule, self.oa.filter)
+        lake_mi_prop = etree.SubElement(lake_mi_filter, self.oa.prop_nte)
+        lake_mi_prop_name = etree.SubElement(lake_mi_prop, self.oa.prop_name)
+        lake_mi_prop_name.text = 'GRIDCODE'
+        lake_mi_literal = etree.SubElement(lake_mi_prop, self.oa.literal)
+        lake_mi_literal.text = '47'
         
         sld_content = etree.tostring(sld, pretty_print=pretty_print)
         
