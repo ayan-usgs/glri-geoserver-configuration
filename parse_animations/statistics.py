@@ -28,7 +28,12 @@ class PandasStats(object):
         """
         dataframes = []
         for file_pathname in self.path_list:
-            dataframe = read_csv(filepath_or_buffer=file_pathname, sep=self.dlmt, names=self.headers, comment=self.cmnt, skiprows=self.skip_rows)
+            dataframe = read_csv(filepath_or_buffer=file_pathname, 
+                                 sep=self.dlmt, 
+                                 names=self.headers, 
+                                 comment=self.cmnt, 
+                                 skiprows=self.skip_rows
+                                 )
             dataframes.append(dataframe)
         return dataframes
     
@@ -82,9 +87,13 @@ class PandasStats(object):
         
         """
         if column_names is not None:
-            df_pcnt = dataframe[column_names].describe(percentiles=percentiles, percentile_width=None)
+            df_pcnt = dataframe[column_names].describe(percentiles=percentiles, 
+                                                       percentile_width=None
+                                                       )
         else:
-            df_pcnt = dataframe.describe(percentiles=percentiles, percentile_width=None)
+            df_pcnt = dataframe.describe(percentiles=percentiles, 
+                                         percentile_width=None
+                                         )
         return df_pcnt
     
     def parse_describe(self, describe_df, column_list, range_start, range_end):
