@@ -53,7 +53,8 @@ class LxmlSLDAttrBins(object):
         else:
             raise Exception('Cannot recognize symbolizer type...')
         
-    def write_sld(self, sld_bin_dict, attribute_units, pretty_print=False, lyr_name=None, usr_style_title_text=None):
+    def write_sld(self, sld_bin_dict, attribute_units, pretty_print=False, 
+                  lyr_name=None, usr_style_title_text=None):
         
         attribute_name = sld_bin_dict['attribute']
         try:
@@ -62,7 +63,9 @@ class LxmlSLDAttrBins(object):
             attribute_missing = 'There is no unit specified for %s.' % attribute_name
             raise Exception(attribute_missing) 
         
-        sld = etree.Element(self.SLD + 'StyledLayerDescriptor', version=self.version, attrib=self.schema_location, nsmap=self.NSMAP)  
+        sld = etree.Element(self.SLD + 'StyledLayerDescriptor', version=self.version, 
+                            attrib=self.schema_location, nsmap=self.NSMAP
+                            )  
         
         named_lyr = etree.SubElement(sld, 'NamedLayer') 
         nl_name = etree.SubElement(named_lyr, 'Name')  
