@@ -56,7 +56,7 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
     return result_list
 
 
-def create_glri_sld(directory, style, xml_writepath, extension='*.nhru', 
+def create_glri_sld(directory, style, xml_writepath=None, extension='*.nhru', 
                     column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
                     colors=COLORS, attribute_units=ATTRIBUTE_UNITS):
     slds = []
@@ -65,7 +65,7 @@ def create_glri_sld(directory, style, xml_writepath, extension='*.nhru',
     df_combined = ps.create_concat_dataframe()
     hi = column_names[2:]
     df_pcnt = ps.calculate_df_percentiles(df_combined, percentiles, column_names=hi)
-    df_describe = ps.parse_describe(df_pcnt, hi, 4, 11)
+    df_describe = ps.parse_describe(df_pcnt, hi, 4, len(percentiles)+4)
     for attribute_describe in df_describe:
         sld_b = SldBins(data=attribute_describe)
         pre_coloring_bin = sld_b.create_bins()
@@ -88,7 +88,7 @@ def create_glri_sld(directory, style, xml_writepath, extension='*.nhru',
         sld_data = {'sld_name': sld_name, 'sld_content': sld_content}
         slds.append(sld_data)
         if xml_writepath is not None:
-            xml_filepath =  '%s%s.sld' % (xml_writepath, attribute_name)
+            xml_filepath =  '%s/%s.sld' % (xml_writepath, attribute_name)
             write_to_file(sld_content, xml_filepath)
     return slds
 
