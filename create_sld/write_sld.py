@@ -159,6 +159,7 @@ class LxmlSLDAttrBins(object):
         lake_mi_prop_name.text = 'GRIDCODE'
         lake_mi_literal = etree.SubElement(lake_mi_prop, self.oa.literal)
         lake_mi_literal.text = '47'
+        etree.SubElement(lake_mi_rule, self.symbolizer_attr)
         
         sld_content = etree.tostring(sld, pretty_print=pretty_print)
         
