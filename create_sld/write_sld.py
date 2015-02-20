@@ -95,7 +95,7 @@ class LxmlSLDAttrBins(object):
             bin_hex_color = sld_bin.bin_color
             if float(lower_limit) == 0:
                 filter_title = etree.SubElement(sld_rule, 'Title')
-                filter_title.text = 'Less than %s' % upper_limit
+                filter_title.text = 'Less than %s %s' % (upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_prop_lt = etree.SubElement(ogc_filter, self.oa.prop_lt)
                 ogc_prop_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
@@ -104,7 +104,7 @@ class LxmlSLDAttrBins(object):
                 ogc_literal.text = upper_limit
             elif upper_limit is None:
                 filter_title = etree.SubElement(sld_rule, 'Title')
-                filter_title.text = 'greater than %s' % lower_limit
+                filter_title.text = 'greater than %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_prop_gt = etree.SubElement(ogc_filter, self.oa.prop_gt)
                 ogc_prop_gt_name = etree.SubElement(ogc_prop_gt, self.oa.prop_name)
