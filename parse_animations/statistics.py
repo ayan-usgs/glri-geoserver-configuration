@@ -187,7 +187,10 @@ class SldBins(object):
         except ValueError:
             value_float = numeric_value
         try:
-            value_rounded = round(value_float, ndigits)
+            if abs(value_float) < 1:
+                value_rounded = round(value_float, ndigits)
+            else:
+                value_rounded = round(value_float, ndigits-1)
             value_rounded_str = str(value_rounded)
         except TypeError:
             value_rounded_str = value_float   
