@@ -114,8 +114,8 @@ class LxmlSLDAttrBins(object):
             sld_bin_range = sld_bin.bin_range
             lower_limit, upper_limit = sld_bin_range
             bin_hex_color = sld_bin.bin_color
+            filter_title = etree.SubElement(sld_rule, 'Title')
             if float(lower_limit) == 0:
-                filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = 'Less than %s %s' % (upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
@@ -124,7 +124,6 @@ class LxmlSLDAttrBins(object):
                 self._exclude_lake_michican(ogc_and)
                 # end filter
             elif upper_limit is None:
-                filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = 'Greater or equal to %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
@@ -134,7 +133,6 @@ class LxmlSLDAttrBins(object):
                 self._exclude_lake_michican(ogc_and)
                 # end filter
             else:
-                filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = '%s to %s %s' % (lower_limit, upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)  # and node
