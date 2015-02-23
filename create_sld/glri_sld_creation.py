@@ -8,7 +8,7 @@ from parse_animations.headers import ANIMATION_HEADERS, ATTRIBUTE_UNITS
 from tier.global_constants import PRMS_CUSTOM_PROJECTION
 
 # spectrum from red to green
-COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', 'F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
+COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', '#F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
 # 10 percentile bins
 PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
