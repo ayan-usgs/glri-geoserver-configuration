@@ -53,8 +53,22 @@ class LxmlSLDAttrBins(object):
         else:
             raise Exception('Cannot recognize symbolizer type...')
         
-    def _exclude_lake_michican(self, xml_object, lake_michigan_id=47):
-        no_lake_mi = etree.SubElement(xml_object, self.oa.prop_nte)
+    def _greater_or_equal_to_lower_limit(self, xml_node, attribute_name, lower_limit):
+        ogc_prop_gte = etree.SubElement(xml_node, self.oa.prop_gte)
+        ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
+        ogc_prop_gte_name.text = attribute_name
+        ogc_literal_gte = etree.SubElement(ogc_prop_gte, self.oa.literal)
+        ogc_literal_gte.text = lower_limit
+        
+    def _less_than_the_upper_limit(self, xml_node, attribute_name, upper_limit):
+        ogc_prop_lt = etree.SubElement(xml_node, self.oa.prop_lt)
+        ogc_prop_lt_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
+        ogc_prop_lt_name.text = attribute_name
+        ogc_literal_lt = etree.SubElement(ogc_prop_lt, self.oa.literal)
+        ogc_literal_lt.text = upper_limit                
+        
+    def _exclude_lake_michican(self, xml_node, lake_michigan_id=47):
+        no_lake_mi = etree.SubElement(xml_node, self.oa.prop_nte)
         no_lake_mi_prop_name = etree.SubElement(no_lake_mi, self.oa.prop_name)
         no_lake_mi_prop_name.text = 'GRIDCODE'
         no_lake_mi_literal = etree.SubElement(no_lake_mi, self.oa.literal)
@@ -105,11 +119,8 @@ class LxmlSLDAttrBins(object):
                 filter_title.text = 'Less than %s %s' % (upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
-                ogc_prop_lt = etree.SubElement(ogc_and, self.oa.prop_lt)
-                ogc_prop_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
-                ogc_prop_name.text = attribute_name
-                ogc_literal = etree.SubElement(ogc_prop_lt, self.oa.literal)
-                ogc_literal.text = upper_limit
+                self._less_than_the_upper_limit(ogc_and, attribute_name, upper_limit)
+                # exclude lake michigan
                 self._exclude_lake_michican(ogc_and)
                 # end filter
             elif upper_limit is None:
@@ -117,29 +128,20 @@ class LxmlSLDAttrBins(object):
                 filter_title.text = 'Greater or equal to %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
-                ogc_prop_gte = etree.SubElement(ogc_and, self.oa.prop_gte)
-                ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
-                ogc_prop_gte_name.text = attribute_name
-                ogc_literal = etree.SubElement(ogc_prop_gte, self.oa.literal)
-                ogc_literal.text = lower_limit
+                # set the lower limit for the last bin
+                self._greater_or_equal_to_lower_limit(ogc_and, attribute_name, lower_limit)
+                # exclude lake michigan
                 self._exclude_lake_michican(ogc_and)
+                # end filter
             else:
                 filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = '%s to %s %s' % (lower_limit, upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)  # and node
                 # greater or equal to the lower limit
-                ogc_prop_gte = etree.SubElement(ogc_and, self.oa.prop_gte)
-                ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
-                ogc_prop_gte_name.text = attribute_name
-                ogc_literal_gte = etree.SubElement(ogc_prop_gte, self.oa.literal)
-                ogc_literal_gte.text = lower_limit
+                self._greater_or_equal_to_lower_limit(ogc_and, attribute_name, lower_limit)
                 # less than the upper limit
-                ogc_prop_lt = etree.SubElement(ogc_and, self.oa.prop_lt)
-                ogc_prop_lt_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
-                ogc_prop_lt_name.text = attribute_name
-                ogc_literal_lt = etree.SubElement(ogc_prop_lt, self.oa.literal)
-                ogc_literal_lt.text = upper_limit 
+                self._less_than_the_upper_limit(ogc_and, attribute_name, upper_limit)
                 # exclude Lake Michigan
                 self._exclude_lake_michican(ogc_and)
                 # end filter               
