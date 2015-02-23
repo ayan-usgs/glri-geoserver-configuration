@@ -188,9 +188,9 @@ class SldBins(object):
             value_float = numeric_value
         try:
             if abs(value_float) < 1:
-                round_decimal_places = ndigits
+                round_decimal_places = ndigits  # number of decimal places if the value is less than 1
             else:
-                round_decimal_places = ndigits - 1
+                round_decimal_places = ndigits - 1  # number of decimal places if the value is greater or equal to 1
             format_str = '{{{0}:.{1}f}}'.format(0, round_decimal_places)
             value_rounded = format_str.format(value_float)
             value_rounded_str = value_rounded
