@@ -114,13 +114,13 @@ class LxmlSLDAttrBins(object):
                 # end filter
             elif upper_limit is None:
                 filter_title = etree.SubElement(sld_rule, 'Title')
-                filter_title.text = 'Greater than %s %s' % (lower_limit, attribute_unit)
+                filter_title.text = 'Greater or equal to %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
-                ogc_prop_gt = etree.SubElement(ogc_and, self.oa.prop_gt)
-                ogc_prop_gt_name = etree.SubElement(ogc_prop_gt, self.oa.prop_name)
-                ogc_prop_gt_name.text = attribute_name
-                ogc_literal = etree.SubElement(ogc_prop_gt, self.oa.literal)
+                ogc_prop_gte = etree.SubElement(ogc_and, self.oa.prop_gte)
+                ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
+                ogc_prop_gte_name.text = attribute_name
+                ogc_literal = etree.SubElement(ogc_prop_gte, self.oa.literal)
                 ogc_literal.text = lower_limit
                 self._exclude_lake_michican(ogc_and)
             else:
