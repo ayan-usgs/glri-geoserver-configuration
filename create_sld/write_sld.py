@@ -53,6 +53,13 @@ class LxmlSLDAttrBins(object):
         else:
             raise Exception('Cannot recognize symbolizer type...')
         
+    def _exclude_lake_michican(self, xml_object, lake_michigan_id=47):
+        no_lake_mi = etree.SubElement(xml_object, self.oa.prop_nte)
+        no_lake_mi_prop_name = etree.SubElement(no_lake_mi, self.oa.prop_name)
+        no_lake_mi_prop_name.text = 'GRIDCODE'
+        no_lake_mi_literal = etree.SubElement(no_lake_mi, self.oa.literal)
+        no_lake_mi_literal.text = str(lake_michigan_id)       
+        
     def write_sld(self, sld_bin_dict, attribute_units, pretty_print=False, 
                   lyr_name=None, usr_style_title_text=None):
         
@@ -97,37 +104,45 @@ class LxmlSLDAttrBins(object):
                 filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = 'Less than %s %s' % (upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
-                ogc_prop_lt = etree.SubElement(ogc_filter, self.oa.prop_lt)
+                ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
+                ogc_prop_lt = etree.SubElement(ogc_and, self.oa.prop_lt)
                 ogc_prop_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
                 ogc_prop_name.text = attribute_name
                 ogc_literal = etree.SubElement(ogc_prop_lt, self.oa.literal)
                 ogc_literal.text = upper_limit
+                self._exclude_lake_michican(ogc_and)
+                # end filter
             elif upper_limit is None:
                 filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = 'Greater than %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
-                ogc_prop_gt = etree.SubElement(ogc_filter, self.oa.prop_gt)
+                ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
+                ogc_prop_gt = etree.SubElement(ogc_and, self.oa.prop_gt)
                 ogc_prop_gt_name = etree.SubElement(ogc_prop_gt, self.oa.prop_name)
                 ogc_prop_gt_name.text = attribute_name
                 ogc_literal = etree.SubElement(ogc_prop_gt, self.oa.literal)
                 ogc_literal.text = lower_limit
+                self._exclude_lake_michican(ogc_and)
             else:
                 filter_title = etree.SubElement(sld_rule, 'Title')
                 filter_title.text = '%s to %s %s' % (lower_limit, upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
-                ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
+                ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)  # and node
+                # greater or equal to the lower limit
                 ogc_prop_gte = etree.SubElement(ogc_and, self.oa.prop_gte)
                 ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
                 ogc_prop_gte_name.text = attribute_name
                 ogc_literal_gte = etree.SubElement(ogc_prop_gte, self.oa.literal)
                 ogc_literal_gte.text = lower_limit
-                
+                # less than the upper limit
                 ogc_prop_lt = etree.SubElement(ogc_and, self.oa.prop_lt)
                 ogc_prop_lt_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
                 ogc_prop_lt_name.text = attribute_name
                 ogc_literal_lt = etree.SubElement(ogc_prop_lt, self.oa.literal)
-                ogc_literal_lt.text = upper_limit                
-            
+                ogc_literal_lt.text = upper_limit 
+                # exclude Lake Michigan
+                self._exclude_lake_michican(ogc_and)
+                # end filter               
             symbolizer = etree.SubElement(sld_rule, self.symbolizer_attr)
             if self.symbolizer_attr == 'PointSymbolizer':
                 graphic = etree.SubElement(symbolizer, 'Graphic')
@@ -149,17 +164,6 @@ class LxmlSLDAttrBins(object):
                 css_param_stroke.text = bin_hex_color
                 css_param_stroke_width = etree.SubElement(stroke, 'CssParameter', {'name':'width'})
                 css_param_stroke_width.text = '3'
-        # filter out Lake Michigan
-        lake_mi_rule = etree.SubElement(feature_type_style, 'Rule')
-        lake_mi_name = etree.SubElement(lake_mi_rule, 'Name')
-        lake_mi_name.text = 'exclude_lake_michigan'
-        lake_mi_filter = etree.SubElement(lake_mi_rule, self.oa.filter)
-        lake_mi_prop = etree.SubElement(lake_mi_filter, self.oa.prop_nte)
-        lake_mi_prop_name = etree.SubElement(lake_mi_prop, self.oa.prop_name)
-        lake_mi_prop_name.text = 'GRIDCODE'
-        lake_mi_literal = etree.SubElement(lake_mi_prop, self.oa.literal)
-        lake_mi_literal.text = '47'
-        etree.SubElement(lake_mi_rule, self.symbolizer_attr)
         
         sld_content = etree.tostring(sld, pretty_print=pretty_print)
         
