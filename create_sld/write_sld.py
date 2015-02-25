@@ -53,19 +53,26 @@ class LxmlSLDAttrBins(object):
         else:
             raise Exception('Cannot recognize symbolizer type...')
         
-    def _greater_or_equal_to_lower_limit(self, xml_node, attribute_name, lower_limit):
-        ogc_prop_gte = etree.SubElement(xml_node, self.oa.prop_gte)
-        ogc_prop_gte_name = etree.SubElement(ogc_prop_gte, self.oa.prop_name)
-        ogc_prop_gte_name.text = attribute_name
-        ogc_literal_gte = etree.SubElement(ogc_prop_gte, self.oa.literal)
-        ogc_literal_gte.text = lower_limit
+    def _greater_than_lower_limit(self, xml_node, attribute_name, lower_limit):
+        ogc_prop_gt = etree.SubElement(xml_node, self.oa.prop_gt)
+        ogc_prop_gt_name = etree.SubElement(ogc_prop_gt, self.oa.prop_name)
+        ogc_prop_gt_name.text = attribute_name
+        ogc_literal_gt = etree.SubElement(ogc_prop_gt, self.oa.literal)
+        ogc_literal_gt.text = lower_limit
         
-    def _less_than_the_upper_limit(self, xml_node, attribute_name, upper_limit):
-        ogc_prop_lt = etree.SubElement(xml_node, self.oa.prop_lt)
-        ogc_prop_lt_name = etree.SubElement(ogc_prop_lt, self.oa.prop_name)
-        ogc_prop_lt_name.text = attribute_name
-        ogc_literal_lt = etree.SubElement(ogc_prop_lt, self.oa.literal)
-        ogc_literal_lt.text = upper_limit                
+    def _less_than_or_equal_to_upper_limit(self, xml_node, attribute_name, upper_limit):
+        ogc_prop_lte = etree.SubElement(xml_node, self.oa.prop_lte)
+        ogc_prop_lte_name = etree.SubElement(ogc_prop_lte, self.oa.prop_name)
+        ogc_prop_lte_name.text = attribute_name
+        ogc_literal_lte = etree.SubElement(ogc_prop_lte, self.oa.literal)
+        ogc_literal_lte.text = upper_limit 
+        
+    def _equal_lower_and_upper_limit(self, xml_node, attribute_name, value):
+        ogc_prop_eq = etree.SubElement(xml_node, self.oa.prop_eq)
+        ogc_prop_eq_name = etree.SubElement(ogc_prop_eq, self.oa.prop_name)
+        ogc_prop_eq_name.text = attribute_name
+        ogc_literal_eq = etree.SubElement(ogc_prop_eq, self.oa.literal)
+        ogc_literal_eq.text = value
         
     def _exclude_lake_michican(self, xml_node, lake_michigan_id=47):
         no_lake_mi = etree.SubElement(xml_node, self.oa.prop_nte)
@@ -115,20 +122,35 @@ class LxmlSLDAttrBins(object):
             lower_limit, upper_limit = sld_bin_range
             bin_hex_color = sld_bin.bin_color
             filter_title = etree.SubElement(sld_rule, 'Title')
-            if float(lower_limit) == 0:
-                filter_title.text = 'Less than %s %s' % (upper_limit, attribute_unit)
+            try:
+                lower_limit_val = float(lower_limit)
+            except TypeError:
+                lower_limit_val = 0
+            try:
+                upper_limit_val = float(upper_limit)
+            except TypeError:
+                upper_limit_val = 0
+            if lower_limit_val == 0 and upper_limit_val > 0 and sld_bin_no == 1:
+                filter_title.text = 'Less than or equal to %s %s' % (upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
-                self._less_than_the_upper_limit(ogc_and, attribute_name, upper_limit)
+                self._less_than_or_equal_to_upper_limit(ogc_and, attribute_name, upper_limit)
                 # exclude lake michigan
                 self._exclude_lake_michican(ogc_and)
                 # end filter
+            elif lower_limit_val == upper_limit_val:  # handle cases where a percentile bin has the same upper and lower bound
+                filter_title.text = 'Equal to %s %s' % (lower_limit, attribute_unit)
+                ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
+                ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
+                self._equal_lower_and_upper_limit(ogc_and, attribute_name, lower_limit)
+                # exclude lake michigan
+                self._exclude_lake_michican(ogc_and)
             elif upper_limit is None:
-                filter_title.text = 'Greater or equal to %s %s' % (lower_limit, attribute_unit)
+                filter_title.text = 'Greater than %s %s' % (lower_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)
                 # set the lower limit for the last bin
-                self._greater_or_equal_to_lower_limit(ogc_and, attribute_name, lower_limit)
+                self._greater_than_lower_limit(ogc_and, attribute_name, lower_limit)
                 # exclude lake michigan
                 self._exclude_lake_michican(ogc_and)
                 # end filter
@@ -136,10 +158,10 @@ class LxmlSLDAttrBins(object):
                 filter_title.text = '%s to %s %s' % (lower_limit, upper_limit, attribute_unit)
                 ogc_filter = etree.SubElement(sld_rule, self.oa.filter)
                 ogc_and = etree.SubElement(ogc_filter, self.oa.ogc_and)  # and node
-                # greater or equal to the lower limit
-                self._greater_or_equal_to_lower_limit(ogc_and, attribute_name, lower_limit)
+                # greater or equal than the lower limit
+                self._greater_than_lower_limit(ogc_and, attribute_name, lower_limit)
                 # less than the upper limit
-                self._less_than_the_upper_limit(ogc_and, attribute_name, upper_limit)
+                self._less_than_or_equal_to_upper_limit(ogc_and, attribute_name, upper_limit)
                 # exclude Lake Michigan
                 self._exclude_lake_michican(ogc_and)
                 # end filter               

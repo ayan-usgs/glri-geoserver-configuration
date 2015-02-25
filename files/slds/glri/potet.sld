@@ -1,1 +1,252 @@
-<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"><NamedLayer><Name>potet_layer</Name><UserStyle><Title>potet styling</Title><FeatureTypeStyle><Rule><Name>potet_bin_no_1</Name><Title>Less than 27.6716</Title><ogc:Filter><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>27.6716</ogc:Literal></ogc:PropertyIsLessThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9400D3</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_2</Name><Title>27.6716 to 30.1372</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>27.6716</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>30.1372</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#4B0082</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_3</Name><Title>30.1372 to 32.0235</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>30.1372</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>32.0235</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#0000FF</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_4</Name><Title>32.0235 to 33.7517</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>32.0235</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>33.7517</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#008000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_5</Name><Title>33.7517 to 35.51344</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>33.7517</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>35.51344</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9ACD32</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_6</Name><Title>35.51344 to 37.526</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>35.51344</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>37.526</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFFF00</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_7</Name><Title>37.526 to 40.395</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>37.526</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>40.395</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFA500</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>potet_bin_no_8</Name><Title>greater than 40.395</Title><ogc:Filter><ogc:PropertyIsGreaterThan><ogc:PropertyName>potet</ogc:PropertyName><ogc:Literal>40.395</ogc:Literal></ogc:PropertyIsGreaterThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FF0000</CssParameter></Fill></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>
+<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>potet_layer</Name>
+    <UserStyle>
+      <Title>potet styling</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>potet_bin_no_1</Name>
+          <Title>Less than or equal to 27.02 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>27.02</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#649C32</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_2</Name>
+          <Title>27.02 to 29.26 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>27.02</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>29.26</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#89B124</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_3</Name>
+          <Title>29.26 to 30.93 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>29.26</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>30.93</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC618</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_4</Name>
+          <Title>30.93 to 32.37 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>30.93</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>32.37</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#D3DB0C</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_5</Name>
+          <Title>32.37 to 33.75 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>32.37</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>33.75</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F9F000</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_6</Name>
+          <Title>33.75 to 35.15 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>33.75</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>35.15</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F4C700</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_7</Name>
+          <Title>35.15 to 36.66 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>35.15</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>36.66</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EF9E00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_8</Name>
+          <Title>36.66 to 38.51 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>36.66</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>38.51</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EA7500</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_9</Name>
+          <Title>38.51 to 41.26 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>38.51</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>41.26</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E54C00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>potet_bin_no_10</Name>
+          <Title>Greater than 41.26 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>potet</ogc:PropertyName>
+                <ogc:Literal>41.26</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E12300</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

@@ -1,1 +1,252 @@
-<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"><NamedLayer><Name>hru_streamflow_out_layer</Name><UserStyle><Title>hru_streamflow_out styling</Title><FeatureTypeStyle><Rule><Name>hru_streamflow_out_bin_no_1</Name><Title>Less than 1.38149</Title><ogc:Filter><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>1.38149</ogc:Literal></ogc:PropertyIsLessThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FF0000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_2</Name><Title>1.38149 to 5.19858</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>1.38149</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>5.19858</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFA500</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_3</Name><Title>5.19858 to 12.193</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>5.19858</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>12.193</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFFF00</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_4</Name><Title>12.193 to 23.5676</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>12.193</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>23.5676</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9ACD32</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_5</Name><Title>23.5676 to 41.89405</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>23.5676</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>41.89405</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#008000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_6</Name><Title>41.89405 to 73.57892</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>41.89405</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>73.57892</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#0000FF</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_7</Name><Title>73.57892 to 139.693</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>73.57892</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>139.693</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#4B0082</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_streamflow_out_bin_no_8</Name><Title>greater than 139.693</Title><ogc:Filter><ogc:PropertyIsGreaterThan><ogc:PropertyName>hru_streamflow_out</ogc:PropertyName><ogc:Literal>139.693</ogc:Literal></ogc:PropertyIsGreaterThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9400D3</CssParameter></Fill></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>
+<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>hru_streamflow_out_layer</Name>
+    <UserStyle>
+      <Title>hru_streamflow_out styling</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_1</Name>
+          <Title>Less than or equal to 0.929 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>0.929</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E12300</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_2</Name>
+          <Title>0.929 to 3.40 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>0.929</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>3.40</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E54C00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_3</Name>
+          <Title>3.40 to 7.52 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>3.40</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>7.52</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EA7500</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_4</Name>
+          <Title>7.52 to 14.06 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>7.52</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>14.06</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EF9E00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_5</Name>
+          <Title>14.06 to 23.57 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>14.06</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>23.57</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F4C700</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_6</Name>
+          <Title>23.57 to 37.54 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>23.57</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>37.54</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F9F000</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_7</Name>
+          <Title>37.54 to 58.56 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>37.54</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>58.56</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#D3DB0C</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_8</Name>
+          <Title>58.56 to 93.61 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>58.56</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>93.61</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC618</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_9</Name>
+          <Title>93.61 to 167.06 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>93.61</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>167.06</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#89B124</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_streamflow_out_bin_no_10</Name>
+          <Title>Greater than 167.06 cfs</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
+                <ogc:Literal>167.06</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#649C32</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

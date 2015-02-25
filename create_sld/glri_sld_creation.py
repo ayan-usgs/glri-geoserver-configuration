@@ -58,7 +58,7 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
 
 def create_glri_sld(directory, style, xml_writepath=None, extension='*.nhru', 
                     column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
-                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS):
+                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS, pretty_print=False):
     slds = []
     files = get_filenames_from_directory(directory, extension)
     ps = PandasStats(file_pathnames=files, column_names=column_names, skiprows=21)
@@ -82,7 +82,8 @@ def create_glri_sld(directory, style, xml_writepath=None, extension='*.nhru',
                                                               )
         sld = LxmlSLDAttrBins(style)
         sld_content = sld.write_sld(sld_bin_dict=sld_b_with_colors, 
-                                    attribute_units=attribute_units
+                                    attribute_units=attribute_units,
+                                    pretty_print=pretty_print
                                     )
         sld_name = '%s' % attribute_name 
         sld_data = {'sld_name': sld_name, 'sld_content': sld_content}
@@ -125,28 +126,3 @@ def post_sld_content(sld_data, host, user, pwd, ws=None):
         results.append(create_style_results)
         sld_names += (sld_name,)
     return (results, sld_names)
-        
-
-if __name__ == '__main__':
-
-    # post SLDs
-    slds = create_glri_sld()
-    #post_slds_results, sld_names = post_sld_content(slds, HOST, USER, PWD)
-    #print(sld_names)
-    #print(post_slds_results)
-    #print(len(post_slds_results))
-
-    # create layers
-    #layer_names = create_layer_names(ANIMATION_DIRECTORY, existing_lyrs=None)
-    #print(layer_names)
-    
-    #cgl = create_geoserver_layers(HOST, USER, PWD, WORKSPACE_NAME, DATASTORE, layer_names, sld_names)
-    #print(cgl)
-    #print(len(cgl))
-
-
-    # modify existing layers
-    #pscl = post_style_corrections_to_layers(layers=EXISTING_LAYERS, host=HOST, user=USER, pwd=PWD, 
-    #                                        workspace=WORKSPACE_NAME, datastore=DATASTORE, style=sld_names)
-    #print(pscl)
-    #print(len(pscl))
