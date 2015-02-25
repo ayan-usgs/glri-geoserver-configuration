@@ -1,1 +1,252 @@
-<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"><NamedLayer><Name>pkwater_equiv_layer</Name><UserStyle><Title>pkwater_equiv styling</Title><FeatureTypeStyle><Rule><Name>pkwater_equiv_bin_no_1</Name><Title>Less than 0.4338</Title><ogc:Filter><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.4338</ogc:Literal></ogc:PropertyIsLessThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FF0000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_2</Name><Title>0.4338 to 0.6725</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.4338</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.6725</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFA500</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_3</Name><Title>0.6725 to 0.916</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.6725</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.916</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFFF00</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_4</Name><Title>0.916 to 1.204</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>0.916</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>1.204</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9ACD32</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_5</Name><Title>1.204 to 1.585</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>1.204</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>1.585</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#008000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_6</Name><Title>1.585 to 2.165</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>1.585</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>2.165</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#0000FF</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_7</Name><Title>2.165 to 3.277</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>2.165</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>3.277</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#4B0082</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>pkwater_equiv_bin_no_8</Name><Title>greater than 3.277</Title><ogc:Filter><ogc:PropertyIsGreaterThan><ogc:PropertyName>pkwater_equiv</ogc:PropertyName><ogc:Literal>3.277</ogc:Literal></ogc:PropertyIsGreaterThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9400D3</CssParameter></Fill></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>
+<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>pkwater_equiv_layer</Name>
+    <UserStyle>
+      <Title>pkwater_equiv styling</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_1</Name>
+          <Title>Less than or equal to 0.380 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.380</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E12300</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_2</Name>
+          <Title>0.380 to 0.579 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.380</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.579</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E54C00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_3</Name>
+          <Title>0.579 to 0.767 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.579</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.767</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EA7500</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_4</Name>
+          <Title>0.767 to 0.968 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.767</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.968</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EF9E00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_5</Name>
+          <Title>0.968 to 1.20 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>0.968</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.20</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F4C700</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_6</Name>
+          <Title>1.20 to 1.50 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.20</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.50</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F9F000</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_7</Name>
+          <Title>1.50 to 1.90 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.50</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.90</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#D3DB0C</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_8</Name>
+          <Title>1.90 to 2.51 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>1.90</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>2.51</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC618</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_9</Name>
+          <Title>2.51 to 3.65 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>2.51</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>3.65</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#89B124</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>pkwater_equiv_bin_no_10</Name>
+          <Title>Greater than 3.65 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
+                <ogc:Literal>3.65</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#649C32</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

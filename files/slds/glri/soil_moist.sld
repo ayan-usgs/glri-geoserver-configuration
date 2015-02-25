@@ -1,1 +1,252 @@
-<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"><NamedLayer><Name>soil_moist_layer</Name><UserStyle><Title>soil_moist styling</Title><FeatureTypeStyle><Rule><Name>soil_moist_bin_no_1</Name><Title>Less than 0.17291</Title><ogc:Filter><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>0.17291</ogc:Literal></ogc:PropertyIsLessThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FF0000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_2</Name><Title>0.17291 to 0.57754</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>0.17291</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>0.57754</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFA500</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_3</Name><Title>0.57754 to 1.13964</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>0.57754</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>1.13964</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFFF00</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_4</Name><Title>1.13964 to 1.64358</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>1.13964</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>1.64358</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9ACD32</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_5</Name><Title>1.64358 to 2.12505</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>1.64358</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>2.12505</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#008000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_6</Name><Title>2.12505 to 2.86293</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>2.12505</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>2.86293</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#0000FF</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_7</Name><Title>2.86293 to 5.36244</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>2.86293</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>5.36244</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#4B0082</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>soil_moist_bin_no_8</Name><Title>greater than 5.36244</Title><ogc:Filter><ogc:PropertyIsGreaterThan><ogc:PropertyName>soil_moist</ogc:PropertyName><ogc:Literal>5.36244</ogc:Literal></ogc:PropertyIsGreaterThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9400D3</CssParameter></Fill></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>
+<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>soil_moist_layer</Name>
+    <UserStyle>
+      <Title>soil_moist styling</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>soil_moist_bin_no_1</Name>
+          <Title>Less than or equal to 0.129 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.129</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E12300</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_2</Name>
+          <Title>0.129 to 0.393 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.129</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.393</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E54C00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_3</Name>
+          <Title>0.393 to 0.762 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.393</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.762</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EA7500</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_4</Name>
+          <Title>0.762 to 1.26 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>0.762</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>1.26</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EF9E00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_5</Name>
+          <Title>1.26 to 1.64 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>1.26</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>1.64</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F4C700</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_6</Name>
+          <Title>1.64 to 2.02 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>1.64</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>2.02</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F9F000</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_7</Name>
+          <Title>2.02 to 2.48 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>2.02</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>2.48</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#D3DB0C</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_8</Name>
+          <Title>2.48 to 3.51 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>2.48</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>3.51</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC618</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_9</Name>
+          <Title>3.51 to 6.04 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>3.51</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>6.04</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#89B124</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>soil_moist_bin_no_10</Name>
+          <Title>Greater than 6.04 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>soil_moist</ogc:PropertyName>
+                <ogc:Literal>6.04</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#649C32</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

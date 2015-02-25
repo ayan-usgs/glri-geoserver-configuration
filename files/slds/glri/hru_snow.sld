@@ -1,1 +1,252 @@
-<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"><NamedLayer><Name>hru_snow_layer</Name><UserStyle><Title>hru_snow styling</Title><FeatureTypeStyle><Rule><Name>hru_snow_bin_no_1</Name><Title>Less than 1.71839</Title><ogc:Filter><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>1.71839</ogc:Literal></ogc:PropertyIsLessThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FF0000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_2</Name><Title>1.71839 to 2.47329</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>1.71839</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>2.47329</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFA500</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_3</Name><Title>2.47329 to 3.11358</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>2.47329</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>3.11358</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#FFFF00</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_4</Name><Title>3.11358 to 3.74724</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>3.11358</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>3.74724</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9ACD32</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_5</Name><Title>3.74724 to 4.44932</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>3.74724</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>4.44932</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#008000</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_6</Name><Title>4.44932 to 5.28935</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>4.44932</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>5.28935</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#0000FF</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_7</Name><Title>5.28935 to 6.5403</Title><ogc:Filter><ogc:And><ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>5.28935</ogc:Literal></ogc:PropertyIsGreaterThanOrEqualTo><ogc:PropertyIsLessThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>6.5403</ogc:Literal></ogc:PropertyIsLessThan></ogc:And></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#4B0082</CssParameter></Fill></PolygonSymbolizer></Rule><Rule><Name>hru_snow_bin_no_8</Name><Title>greater than 6.5403</Title><ogc:Filter><ogc:PropertyIsGreaterThan><ogc:PropertyName>hru_snow</ogc:PropertyName><ogc:Literal>6.5403</ogc:Literal></ogc:PropertyIsGreaterThan></ogc:Filter><PolygonSymbolizer><Fill><CssParameter name="fill">#9400D3</CssParameter></Fill></PolygonSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>
+<StyledLayerDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xmlns="http://www.opengis.net/sld" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd">
+  <NamedLayer>
+    <Name>hru_snow_layer</Name>
+    <UserStyle>
+      <Title>hru_snow styling</Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>hru_snow_bin_no_1</Name>
+          <Title>Less than or equal to 1.54 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>1.54</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E12300</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_2</Name>
+          <Title>1.54 to 2.19 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>1.54</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>2.19</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E54C00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_3</Name>
+          <Title>2.19 to 2.73 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>2.19</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>2.73</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EA7500</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_4</Name>
+          <Title>2.73 to 3.24 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>2.73</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>3.24</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#EF9E00</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_5</Name>
+          <Title>3.24 to 3.75 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>3.24</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>3.75</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F4C700</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_6</Name>
+          <Title>3.75 to 4.30 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>3.75</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>4.30</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#F9F000</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_7</Name>
+          <Title>4.30 to 4.93 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>4.30</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>4.93</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#D3DB0C</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_8</Name>
+          <Title>4.93 to 5.71 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>4.93</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>5.71</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC618</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_9</Name>
+          <Title>5.71 to 6.91 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>5.71</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>6.91</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#89B124</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>hru_snow_bin_no_10</Name>
+          <Title>Greater than 6.91 in</Title>
+          <ogc:Filter>
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>hru_snow</ogc:PropertyName>
+                <ogc:Literal>6.91</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsNotEqualTo>
+                <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
+                <ogc:Literal>47</ogc:Literal>
+              </ogc:PropertyIsNotEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#649C32</CssParameter>
+            </Fill>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
