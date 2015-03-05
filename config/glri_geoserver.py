@@ -5,13 +5,49 @@ Created on Dec 9, 2014
 '''
 import os
 import glob
-from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore
+from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore, GeoWebCacheSetUp
 from py_geoserver_rest_requests.map_services import WFS, WCS, WMS
-from py_geoserver_rest_requests.utilities import get_filename_from_path
+from py_geoserver_rest_requests.utilities import get_filename_from_path, get_ws_layers, get_layer_default_styles
 from geoserver.catalog import Catalog
 from config.config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
 from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
 
+
+class GlriGeoWebCache(object):
+    
+    def __init__(self, gwc_host, gs_url, gs_user, gs_password, workspaces):
+        self.gwc_host = gwc_host
+        self.gs_url = gs_url
+        self.gs_user = gs_user
+        self.gs_pwd = gs_password
+        self.workspaces = workspaces
+        
+    def _get_layers(self):
+        layers = get_ws_layers(self.gs_url, self.gs_user, 
+                               self.gs_pwd, self.workspaces
+                               )
+        return layers
+    
+    def _get_layer_default_styles(self):
+        layers = self._get_layers()
+        layers_with_default_styles = get_layer_default_styles(self.gs_url, 
+                                                              self.gs_user, 
+                                                              self.gs_pwd, 
+                                                              layers
+                                                              )
+        return layers_with_default_styles
+    
+    def tile_cache(self, threads=2):
+        layer_data = self._get_layer_default_styles()
+        for layer_datum in layer_data:
+            workspace_name, layer_info = layer_datum
+            layer_name = layer_info['layer_name']
+            default_style = layer_info['style_name']
+            gwc = GeoWebCacheSetUp(self.gwc_host, self.gs_user, self.gs_pwd, 
+                                   workspace_name, layer_name
+                                   )
+            seed_xml = gwc.create_seed_xml(default_style, threads=threads)
+        
 
 class GlriGeoserver(object):
     """
