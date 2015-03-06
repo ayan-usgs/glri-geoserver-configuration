@@ -4,6 +4,18 @@ Created on Dec 10, 2014
 @author: ayan
 '''
 from py_geoserver_rest_requests import GeoServerWorkspace, GeoServerDataStore
+from tier.dev import AFINCH_LAYERS
+
+
+def search_layer_data(search_value,
+                      search_attribute_name, 
+                      target_attribute_name):
+    result_value = None
+    for layer in AFINCH_LAYERS:
+        search_attr_val = layer.__getattribute__(search_attribute_name)
+        if search_attr_val == search_value:
+            result_value = layer.__getattribute__(target_attribute_name)
+    return result_value
 
 
 def setup_workspace(host, user, password, workspace_name,

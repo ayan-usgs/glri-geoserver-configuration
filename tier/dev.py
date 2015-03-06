@@ -10,7 +10,8 @@ from global_constants import (DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING,
 
 
 HOST = 'http://cida-eros-glridev.er.usgs.gov:8081/glri-geoserver/rest'
-
+GWC_HOST = 'http://cida-eros-glridev.er.usgs.gov:8081/glri-geoserver/gwc/rest'
+TILE_CACHED_WORKSPACES = ['glri-afinch']
 
 AfinchLayer = namedtuple('AfinchLayer', ['workspace', 
                                          'lyr_name',
