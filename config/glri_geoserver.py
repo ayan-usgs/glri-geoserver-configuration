@@ -68,7 +68,7 @@ class GlriGeoWebCache(object):
     
     def tile_cache(self, zoom_start=0, zoom_end=12, 
                    threads=2, check_interval=10, 
-                   layer_data=AFINCH_LAYERS, 
+                   layer_data=AFINCH_LAYERS, seed_type='seed',
                    gridset_id='EPSG:900913'):
         """
         Execute the tile cache for the specified workspaces.
@@ -76,7 +76,11 @@ class GlriGeoWebCache(object):
         :param int zoom_start: starting zoom level
         :param int zoom_end: ending zoom level
         :param int threads: number of threads to be used for tile caching
-        :param float check_interval: fequency in seconds to check on tile caching progress for a layer
+        :param float check_interval: frequency in seconds to check on tile caching progress for a layer
+        :param layer_data: GLRI AFINCH layer parameters
+        :type layer_data: list of named tuples
+        :param str seed_type: specify 'seed', 'reseed', or 'truncate'
+        :param str gridset_id: projection that should be cached; this should be the same as the map project used in the app
         :return: urls and status codes of posted seed requests
         :rtype: list
         
@@ -97,7 +101,7 @@ class GlriGeoWebCache(object):
                                        )
                 seed_xml = gwc.create_seed_xml(cache_style, zoom_start=zoom_start, 
                                                zoom_stop=zoom_end, threads=threads,
-                                               gridset_id=gridset_id
+                                               gridset_id=gridset_id, seed_type=seed_type
                                                )
                 seed = gwc.seed_request(seed_xml)
                 # post_url = '{0}/seed/{1}:{2}.xml'.format(self.gwc_host, workspace_name, layer_name)
