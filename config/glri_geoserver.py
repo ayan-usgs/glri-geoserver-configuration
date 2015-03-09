@@ -11,9 +11,9 @@ from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore, GeoW
 from py_geoserver_rest_requests.map_services import WFS, WCS, WMS
 from py_geoserver_rest_requests.utilities import get_filename_from_path, get_ws_layers, get_layer_default_styles
 from geoserver.catalog import Catalog
-from config_utils import (setup_workspace, create_prms_datastore, 
-                          create_shapefile_datastore, search_layer_data)
+from config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
 from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
+from tier.dev import AFINCH_LAYERS
 
 
 class GlriGeoWebCache(object):
@@ -67,7 +67,9 @@ class GlriGeoWebCache(object):
         return layers_with_default_styles
     
     def tile_cache(self, zoom_start=0, zoom_end=12, 
-                   threads=2, check_interval=10):
+                   threads=2, check_interval=10, 
+                   layer_data=AFINCH_LAYERS, 
+                   gridset_id='EPSG:900913'):
         """
         Execute the tile cache for the specified workspaces.
         
@@ -79,23 +81,27 @@ class GlriGeoWebCache(object):
         :rtype: list
         
         """
-        layer_data = self._get_layer_default_styles()
         seed_requests = []
         for layer_datum in layer_data:
-            workspace_name, layer_info = layer_datum
-            for layer_data_dict in layer_info:
-                layer_name = layer_data_dict['layer_name']
-                default_style = layer_data_dict['style_name']
+            tile_cache = layer_datum.tile_cache
+            if tile_cache:
+                workspace_name = layer_datum.workspace
+                layer_name = layer_datum.lyr_name
+                defined_cache_style = layer_datum.cache_style
+                if defined_cache_style is not None:
+                    cache_style = defined_cache_style
+                else:
+                    cache_style = layer_datum.styles[0]
                 gwc = GeoWebCacheSetUp(self.gwc_host, self.gs_user, self.gs_pwd, 
                                        workspace_name, layer_name
                                        )
-                declared_srs = search_layer_data(layer_name, 'lyr_name', 'declared_srs')
-                gridset = int(declared_srs.split(':')[1])
-                seed_xml = gwc.create_seed_xml(default_style, zoom_start=zoom_start, 
+                seed_xml = gwc.create_seed_xml(cache_style, zoom_start=zoom_start, 
                                                zoom_stop=zoom_end, threads=threads,
-                                               gridset_number=gridset
+                                               gridset_id=gridset_id
                                                )
                 seed = gwc.seed_request(seed_xml)
+                # post_url = '{0}/seed/{1}:{2}.xml'.format(self.gwc_host, workspace_name, layer_name)
+                # seed = gwc.req_sess.post(post_url, data=seed_xml, params={'workspace': workspace_name})
                 seed_url = seed.url
                 seed_status = seed.status_code
                 seed_message = ('Posted seed xml to {0} ' 
@@ -106,7 +112,7 @@ class GlriGeoWebCache(object):
                 array_length = 1
                 while array_length > 0:
                     progress = gwc.query_task_status()
-                    progress_str = '{0} - {1}'.format(datetime.datetime.now(), progress[1])
+                    progress_str = '{0}: {1} - {2}'.format(datetime.datetime.now(), layer_name, progress[1])
                     print(progress_str)
                     long_array = progress[1]['long-array-array']
                     array_length = len(long_array)

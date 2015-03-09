@@ -11,4 +11,5 @@ from tier.dev import GWC_HOST, HOST, TILE_CACHED_WORKSPACES
 glri_gwc = GlriGeoWebCache(GWC_HOST, HOST, USER, 
                            PASSWORD, TILE_CACHED_WORKSPACES
                            )
-glri_gwc.tile_cache()
+cached = glri_gwc.tile_cache()
+print(cached)
