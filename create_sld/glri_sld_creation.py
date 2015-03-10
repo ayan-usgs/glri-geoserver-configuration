@@ -12,6 +12,7 @@ from tier.global_constants import PRMS_CUSTOM_PROJECTION
 COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', '#F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
 # 10 percentile bins
 PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
 FILE_PATH = os.path.abspath(os.path.dirname(__file__))
 ABS_PATH = os.path.abspath(os.path.dirname(FILE_PATH))
 SLD_PATH = os.path.normpath('{0}/files/slds/glri'.format(ABS_PATH))
@@ -63,6 +64,24 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
 def create_glri_sld(directory, style, xml_writepath=SLD_PATH, extension='*.nhru', 
                     column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
                     colors=COLORS, attribute_units=ATTRIBUTE_UNITS, pretty_print=False):
+    """
+    Create an SLD from animation files.
+    
+    :param str directory: directory where animation files are kept locally
+    :param str style: symobilizer to be used in the SLD
+    :param str xml_writepath: location to write the SLD files; set to None to not write file
+    :param str extension: extension of the animation files so they can be found
+    :param list column_names: list of column names in the animation file in order from left to right
+    :param percentiles: percentiles to be used for binning in the SLD
+    :type percentiles: list or tuple of floats
+    :param str colors: colors to be used for each percentile bin, must be the one less the length of percentiles
+    :type colors: list or tuple of hex color strings
+    :param dict attribute_units: mapping of units for each attribute
+    :param bool pretty_print: specify whether XML should be formatted with spaces and line breaks
+    :return: list containing dictionaries with keys 'sld_name' and 'sld_content'
+    :rtype: list of dictionaries
+    
+    """
     slds = []
     files = get_filenames_from_directory(directory, extension)
     ps = PandasStats(file_pathnames=files, column_names=column_names, skiprows=21)
