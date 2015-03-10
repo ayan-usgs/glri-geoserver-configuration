@@ -10,7 +10,8 @@ from global_constants import (DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING,
 
 
 HOST = 'http://cida-eros-glridev.er.usgs.gov:8081/glri-geoserver/rest'
-
+GWC_HOST = 'http://cida-eros-glridev.er.usgs.gov:8081/glri-geoserver/gwc/rest'
+TILE_CACHED_WORKSPACES = ['glri-afinch']
 
 AfinchLayer = namedtuple('AfinchLayer', ['workspace', 
                                          'lyr_name',
@@ -26,16 +27,22 @@ AfinchLayer = namedtuple('AfinchLayer', ['workspace',
                                          'dbase_file',
                                          'netcdf_file',
                                          'join_field',
-                                         'station'
+                                         'station',
+                                         'tile_cache',  # define whether this layer should be tile cached
+                                         'cache_style'  # the style to be used when tile caching
                                          ]
                          )
+
 WORKSPACE_NAMES = ['glri']
+
 AFINCH_WORKSPACES = [#'NHDPlusFlowlines', 
                      #'NHDPlusHUCs', 
                      'NHDCatchments', 
                      'glri-afinch'
                      ]
+
 PERSON = 'Developer Dude'
+
 EMAIL = 'devdude@usgs.gov'
 
 INDIVIDUAL_DATASTORES = [{'workspace': WORKSPACE_NAMES[0], 
@@ -96,7 +103,9 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              dbase_file='/opt/tomcat/data/GLRI/AFINCH/PlusFlowlineVAA.dbf',
                              netcdf_file=None,
                              join_field='REACHCODE',
-                             station=None
+                             station=None,
+                             tile_cache=True,
+                             cache_style='GageLocStreamOrder'
                              ),
                  AfinchLayer(workspace=AFINCH_WORKSPACES[-1], 
                              lyr_name='NHDFlowline',
@@ -112,7 +121,9 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              dbase_file='opt/tomcat/data/GLRI/AFINCH/PlusFlowlineVAA.dbf',
                              netcdf_file=None,
                              join_field='COMID',
-                             station=None
+                             station=None,
+                             tile_cache=False,
+                             cache_style='FlowlineStreamOrder'
                              ),
                  AfinchLayer(workspace=AFINCH_WORKSPACES[-1], 
                              lyr_name='nhd_v2_1_flowline_w_streamorder',
@@ -120,7 +131,7 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              native_srs=GCS_N_AMERICA_1983,
                              declared_srs=EPSG_4269,
                              proj_policy='FORCE_DECLARED',
-                             styles=('line', 'FlowlineStreamOrder'), 
+                             styles=('FlowlineStreamOrder', 'line'), 
                              store_type=DS_SHP, 
                              store_name=None, 
                              desc='NHDFlowline v2.1 with streamorder attrib',
@@ -128,7 +139,9 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              dbase_file=None,
                              netcdf_file=None,
                              join_field=None,
-                             station=None
+                             station=None,
+                             tile_cache=True,
+                             cache_style='FlowlineStreamOrder'
                              ),
                  AfinchLayer(workspace=AFINCH_WORKSPACES[-1], 
                              lyr_name='nhd_v2_1_catch_w_afinch_data',
@@ -144,7 +157,9 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              netcdf_file='/opt/tomcat/data/GLRI/netcdf/afinch_catch.nc',
                              dbase_file=None,
                              join_field=None,
-                             station='GRIDCODE'
+                             station='GRIDCODE',
+                             tile_cache=True,
+                             cache_style='afinch_catch_YCCMean'
                              ),
                  AfinchLayer(workspace=AFINCH_WORKSPACES[-1], 
                              lyr_name='throwaway_afinch_reach',
@@ -160,6 +175,8 @@ AFINCH_LAYERS = [AfinchLayer(workspace=AFINCH_WORKSPACES[-1],
                              dbase_file=None,
                              netcdf_file='/opt/tomcat/data/GLRI/netcdf/afinch_reach.nc',
                              join_field=None,
-                             station='COMID'
+                             station='COMID',
+                             tile_cache=False,
+                             cache_style=None
                              )
                  ]

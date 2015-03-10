@@ -14,16 +14,16 @@ ANIMATION_HEADERS = ['timestamp',
                      'hru_streamflow_out'
                      ]
 
-ATTRIBUTE_UNITS = {'soil_moist': 'in',
-                   'recharge': 'in',
-                   'hru_ppt': 'in',
-                   'hru_rain': 'in',
-                   'hru_snow': 'in',
-                   'tminf': '&#176;F',
-                   'tmaxf': '&#176;F',
-                   'potet': 'in',
-                   'hru_actet': 'in',
-                   'pkwater_equiv': 'in',
-                   'snowmelt': 'in',
-                   'hru_streamflow_out': 'cfs'
+ATTRIBUTE_UNITS = {'soil_moist': u'in',
+                   'recharge': u'in',
+                   'hru_ppt': u'in',
+                   'hru_rain': u'in',
+                   'hru_snow': u'in',
+                   'tminf': u'\xb0F',  # ASCII Hex code for degree symbol used
+                   'tmaxf': u'\xb0F',  # ASCII Hex code for degree symbol used
+                   'potet': u'in',
+                   'hru_actet': u'in',
+                   'pkwater_equiv': u'in',
+                   'snowmelt': u'in',
+                   'hru_streamflow_out': u'cfs'
                    }

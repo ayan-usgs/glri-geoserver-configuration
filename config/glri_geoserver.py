@@ -5,13 +5,125 @@ Created on Dec 9, 2014
 '''
 import os
 import glob
-from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore
+import time
+import datetime
+from py_geoserver_rest_requests import GeoServerLayers, GeoServerDataStore, GeoWebCacheSetUp
 from py_geoserver_rest_requests.map_services import WFS, WCS, WMS
-from py_geoserver_rest_requests.utilities import get_filename_from_path
+from py_geoserver_rest_requests.utilities import get_filename_from_path, get_ws_layers, get_layer_default_styles
 from geoserver.catalog import Catalog
-from config.config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
+from config_utils import setup_workspace, create_prms_datastore, create_shapefile_datastore
 from tier.global_constants import DS_SHP, DS_SHP_JOINING, NCDF_SHP_JOINING
+from tier.dev import AFINCH_LAYERS
 
+
+class GlriGeoWebCache(object):
+    """
+    Create a tile cache. All layers in the specified
+    workspaces will be cached.
+    
+    :param str gwc_host: geowebcache rest URL
+    :param str gs_host: geoserver rest URL
+    :param str gs_user: geoserver username
+    :param str gw_password: geoserver password
+    :param workspaces: iterable of workspaces containing layers to be tile cached
+    :type workspaces: list or tuple
+    
+    """
+    def __init__(self, gwc_host, gs_host, gs_user, gs_password, workspaces):
+        self.gwc_host = gwc_host
+        self.gs_host = gs_host
+        self.gs_user = gs_user
+        self.gs_pwd = gs_password
+        self.workspaces = workspaces
+        
+    def _get_layers(self):
+        """
+        Get all the layers belonging to the
+        specified workspaces.
+        
+        :return: list of tuples of form (workspace_name, [list of layers belonging to the workspace])
+        :rtype: list
+        
+        """
+        layers = get_ws_layers(self.gs_host, self.gs_user, 
+                               self.gs_pwd, self.workspaces
+                               )
+        return layers
+    
+    def _get_layer_default_styles(self):
+        """
+        Get the default style for each layer.
+        
+        :return: list of tuples containing the workspace name and a dictionary; the dictionary contains keys: layer_name, style_name
+        :rtype: list
+        
+        """
+        layers = self._get_layers()
+        layers_with_default_styles = get_layer_default_styles(self.gs_host, 
+                                                              self.gs_user, 
+                                                              self.gs_pwd, 
+                                                              layers
+                                                              )
+        return layers_with_default_styles
+    
+    def tile_cache(self, zoom_start=0, zoom_end=12, 
+                   threads=2, check_interval=10, 
+                   layer_data=AFINCH_LAYERS, seed_type='seed',
+                   gridset_id='EPSG:900913'):
+        """
+        Execute the tile cache for the specified workspaces.
+        
+        :param int zoom_start: starting zoom level
+        :param int zoom_end: ending zoom level
+        :param int threads: number of threads to be used for tile caching
+        :param float check_interval: frequency in seconds to check on tile caching progress for a layer
+        :param layer_data: GLRI AFINCH layer parameters
+        :type layer_data: list of named tuples
+        :param str seed_type: specify 'seed', 'reseed', or 'truncate'
+        :param str gridset_id: projection that should be cached; this should be the same as the map project used in the app
+        :return: urls and status codes of posted seed requests
+        :rtype: list
+        
+        """
+        seed_requests = []
+        for layer_datum in layer_data:
+            tile_cache = layer_datum.tile_cache
+            if tile_cache:
+                workspace_name = layer_datum.workspace
+                layer_name = layer_datum.lyr_name
+                defined_cache_style = layer_datum.cache_style
+                if defined_cache_style is not None:
+                    cache_style = defined_cache_style
+                else:
+                    cache_style = layer_datum.styles[0]
+                gwc = GeoWebCacheSetUp(self.gwc_host, self.gs_user, self.gs_pwd, 
+                                       workspace_name, layer_name
+                                       )
+                seed_xml = gwc.create_seed_xml(cache_style, zoom_start=zoom_start, 
+                                               zoom_stop=zoom_end, threads=threads,
+                                               gridset_id=gridset_id, seed_type=seed_type
+                                               )
+                seed = gwc.seed_request(seed_xml)
+                # post_url = '{0}/seed/{1}:{2}.xml'.format(self.gwc_host, workspace_name, layer_name)
+                # seed = gwc.req_sess.post(post_url, data=seed_xml, params={'workspace': workspace_name})
+                seed_url = seed.url
+                seed_status = seed.status_code
+                seed_message = ('Posted seed xml to {0} ' 
+                                'with a {1} status code.').format(seed_url, seed_status)
+                print(seed_message)
+                progress_message = 'Caching progress on {0}:'.format(layer_name)
+                print(progress_message)
+                array_length = 1
+                while array_length > 0:
+                    progress = gwc.query_task_status()
+                    progress_str = '{0}: {1} - {2}'.format(datetime.datetime.now(), layer_name, progress[1])
+                    print(progress_str)
+                    long_array = progress[1]['long-array-array']
+                    array_length = len(long_array)
+                    time.sleep(check_interval)
+                seed_requests.append((seed_url, seed_status))
+        return seed_requests
+        
 
 class GlriGeoserver(object):
     """
