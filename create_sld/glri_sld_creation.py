@@ -1,3 +1,4 @@
+import os
 from py_geoserver_rest_requests import GeoServerLayers, GeoServerStyles
 from py_geoserver_rest_requests.utilities import get_filename_from_path
 from create_sld.write_sld import LxmlSLDAttrBins
@@ -11,6 +12,9 @@ from tier.global_constants import PRMS_CUSTOM_PROJECTION
 COLORS = ('#E12300', '#E54C00', '#EA7500', '#EF9E00', '#F4C700', '#F9F000', '#D3DB0C', '#AEC618', '#89B124', '#649C32')
 # 10 percentile bins
 PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+FILE_PATH = os.path.abspath(os.path.dirname(__file__))
+ABS_PATH = os.path.abspath(os.path.dirname(FILE_PATH))
+SLD_PATH = os.path.normpath('{0}/files/slds/glri'.format(ABS_PATH))
 
 
 def create_layer_names(directory_path, extension='*.nhru', existing_lyrs=None):
@@ -56,7 +60,7 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
     return result_list
 
 
-def create_glri_sld(directory, style, xml_writepath=None, extension='*.nhru', 
+def create_glri_sld(directory, style, xml_writepath=SLD_PATH, extension='*.nhru', 
                     column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
                     colors=COLORS, attribute_units=ATTRIBUTE_UNITS, pretty_print=False):
     slds = []
@@ -70,7 +74,7 @@ def create_glri_sld(directory, style, xml_writepath=None, extension='*.nhru',
         sld_b = SldBins(data=attribute_describe)
         pre_coloring_bin = sld_b.create_bins()
         attribute_name = pre_coloring_bin['attribute']
-        if attribute_name in ['potet', 'hru_actet', 'tminf', 'tmaxf']: # these have red coloring to represent high values
+        if attribute_name in ['potet', 'hru_actet', 'tminf', 'tmaxf']:  # these have red coloring to represent high values
             sld_b_with_colors = sld_b.bin_coloring_assignment(color_tuple=colors, 
                                                               sld_bin_dictionary=pre_coloring_bin, 
                                                               reverse_coloring=True
