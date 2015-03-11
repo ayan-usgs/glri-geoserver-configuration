@@ -22,12 +22,14 @@ class PandasStats(object):
     """
     ResultTuple = ResultNamedTuple
     
-    def __init__(self, file_pathnames, column_names, skiprows, comment='#', delimiter='\t'):
+    def __init__(self, file_pathnames, column_names, skiprows, **kwargs):
         self.path_list = file_pathnames
-        self.dlmt = delimiter
+        #self.dlmt = kwargs.get('delimiter', '\t')
         self.headers = column_names
-        self.cmnt = comment
+        #self.cmnt = kwargs.get('comment', 'X')
         self.skip_rows = skiprows
+        self.kwargs = {'comment':'#'}
+        self.kwargs.update(kwargs)
     
     def load_file_data(self):
         """
@@ -35,13 +37,13 @@ class PandasStats(object):
         of files provided.
         
         """
+        # sep=self.dlmt, comment=self.cmnt,
         dataframes = []
         for file_pathname in self.path_list:
-            dataframe = read_csv(filepath_or_buffer=file_pathname, 
-                                 sep=self.dlmt, 
-                                 names=self.headers, 
-                                 comment=self.cmnt, 
-                                 skiprows=self.skip_rows
+            dataframe = read_csv(filepath_or_buffer=file_pathname,
+                                 names=self.headers,
+                                 skiprows=self.skip_rows,
+                                 **self.kwargs
                                  )
             dataframes.append(dataframe)
         return dataframes

@@ -47,7 +47,7 @@ EMAIL = 'devdude@usgs.gov'
 
 INDIVIDUAL_DATASTORES = [{'workspace': WORKSPACE_NAMES[0], 
                           'datastore_type': 'PRMS Animation Directory Shapefile Joining Data Store', 
-                          'datastore_name': 'annual_animation_feb2014', 
+                          'datastore_name': 'lake_michigan_prms_annual', 
                           'shp_path': '/opt/tomcat/data/GLRI/PRMS/lkm_hru_simp/lkm_hru_SimplifyPolygon.shp',
                           'prms_animation': '/opt/tomcat/data/GLRI/PRMS/annual_animation_feb2014/',
                           'shapefile_nhru': 'GRIDCODE', 

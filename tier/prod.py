@@ -5,5 +5,4 @@ Created on Dec 18, 2014
 '''
 from dev import *
 
-
-HOST = None
+HOST = 'http://cida-eros-glriprod.er.usgs.gov:8081/glri-geoserver/rest'
