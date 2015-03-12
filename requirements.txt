@@ -1,4 +1,4 @@
--e git+http://cida-eros-stash.er.usgs.gov:7990/stash/scm/gsc/py_geoserver_rest.git@0.3.8#egg=geoserver_rest_requests-master
+-e git+http://cida-eros-stash.er.usgs.gov:7990/stash/scm/gsc/py_geoserver_rest.git@0.3.9#egg=geoserver_rest_requests-master
 gisdata==0.5.4
 gsconfig==0.6.12
 httplib2==0.9
