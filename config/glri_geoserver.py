@@ -91,8 +91,11 @@ class GlriGeoWebCache(object):
             if tile_cache:
                 workspace_name = layer_datum.workspace
                 layer_name = layer_datum.lyr_name
+                layer_styles = layer_datum.styles
                 defined_cache_style = layer_datum.cache_style
-                if defined_cache_style is not None:
+                if defined_cache_style == layer_styles[0]:
+                    cache_style = None
+                elif defined_cache_style is not None:
                     cache_style = defined_cache_style
                 else:
                     cache_style = layer_datum.styles[0]
