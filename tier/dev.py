@@ -51,7 +51,15 @@ INDIVIDUAL_DATASTORES = [{'workspace': WORKSPACE_NAMES[0],
                           'shp_path': '/opt/tomcat/data/GLRI/PRMS/lkm_hru_simp/lkm_hru_SimplifyPolygon.shp',
                           'prms_animation': '/opt/tomcat/data/GLRI/PRMS/annual_animation_feb2014/',
                           'shapefile_nhru': 'GRIDCODE', 
-                          }]
+                          },
+                         {'workspace': WORKSPACE_NAMES[0],
+                          'datastore_type': 'PRMS Animation Directory Shapefile Joining Data Store',
+                          'datastore_name': 'lake_michigan_prms_monthly',
+                          'shp_path': '/opt/tomcat/data/GLRI/PRMS/lkm_hru_simp/lkm_hru_SimplifyPolygon.shp',
+                          'prms_animation': '/opt/tomcat/data/GLRI/PRMS/annual_animation_feb2014/',
+                          'shapefile_nhru': 'GRIDCODE',
+                          }
+                         ]
 
 GLRI_PRMS_LAYERS = ['cccma_cgcm3_1.20c3m.1981-2000.annual', 'cccma_cgcm3_1.sresa1b.2046-2065.annual', 'cccma_cgcm3_1.sresa1b.2081-2100.annual', 
                     'cccma_cgcm3_1.sresa2.2046-2065.annual', 'cccma_cgcm3_1.sresa2.2081-2100.annual', 'cccma_cgcm3_1.sresb1.2046-2065.annual', 

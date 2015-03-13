@@ -239,7 +239,7 @@ class GlriGeoserver(object):
         return config_ds_requests
     
     def config_layers(self, layers, layer_styles, projection, 
-                      workspace_name='glri', datastore_name='annual_animation_feb2014'):
+                      datastore_name, workspace_name='glri'):
         """
         Configure glri layers.
         
