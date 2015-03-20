@@ -56,7 +56,7 @@ INDIVIDUAL_DATASTORES = [{'workspace': WORKSPACE_NAMES[0],
                           'datastore_type': 'PRMS Animation Directory Shapefile Joining Data Store',
                           'datastore_name': 'lake_michigan_prms_monthly',
                           'shp_path': '/opt/tomcat/data/GLRI/PRMS/lkm_hru_simp/lkm_hru_SimplifyPolygon.shp',
-                          'prms_animation': '/opt/tomcat/data/GLRI/PRMS/annual_animation_feb2014/',
+                          'prms_animation': '/opt/tomcat/data/GLRI/PRMS/nov2013_monthly_last10yrs/hru_means/',
                           'shapefile_nhru': 'GRIDCODE',
                           }
                          ]

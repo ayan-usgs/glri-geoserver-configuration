@@ -36,6 +36,7 @@ if __name__ == '__main__':
     config_glri_gs.config_datastores(c.INDIVIDUAL_DATASTORES)
     # configure PRMS annual layers
     annual_datastore = c.INDIVIDUAL_DATASTORES[0]['datastore_name']
+
     config_glri_gs.config_layers(layers=c.GLRI_PRMS_LAYERS, 
                                  layer_styles=c.GLRI_PRMS_SLDS, 
                                  projection=c.PRMS_CUSTOM_PROJECTION,
@@ -44,9 +45,9 @@ if __name__ == '__main__':
     # configure PRMS monthly layers
     monthly_datastore = c.INDIVIDUAL_DATASTORES[1]['datastore_name']
     config_glri_gs.config_layers(layers=c.GLRI_PRMS_MONTHLY_LAYERS,
-                                 layer_styles=None,  # still need to make these
+                                 layer_styles=c.GLRI_PRMS_SLDS,  # still need to make these
                                  projection=c.PRMS_CUSTOM_PROJECTION,
-                                 datastre_name=monthly_datastore
+                                 datastore_name=monthly_datastore
                                  )
     # configure GLRI AFINCH
     afinch_gs = GlriAfinch(HOST, USER, PASSWORD, tier_name)

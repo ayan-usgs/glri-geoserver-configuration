@@ -107,8 +107,6 @@ class GlriGeoWebCache(object):
                                                gridset_id=gridset_id, seed_type=seed_type
                                                )
                 seed = gwc.seed_request(seed_xml)
-                # post_url = '{0}/seed/{1}:{2}.xml'.format(self.gwc_host, workspace_name, layer_name)
-                # seed = gwc.req_sess.post(post_url, data=seed_xml, params={'workspace': workspace_name})
                 seed_url = seed.url
                 seed_status = seed.status_code
                 seed_message = ('Posted seed xml to {0} ' 
@@ -263,8 +261,12 @@ class GlriGeoserver(object):
             feature_type_xml = gsl.create_feature_type_xml(native_name=layer, native_crs=projection)
             post_feature = gsl.create_feature_type(payload=feature_type_xml)
             recalc_feature = gsl.modify_feature_type(payload=feature_type_xml)
-            layer_style_xml = gsl.create_lyr_style_xml(style_name=layer_styles)
-            change_layer_style = gsl.modify_layer_style(payload=layer_style_xml)
+            if layer_styles is not None:
+                layer_style_xml = gsl.create_lyr_style_xml(style_name=layer_styles)
+                change_layer_style = gsl.modify_layer_style(payload=layer_style_xml)
+            else:
+                layer_style_xml = gsl.create_lyr_style_xml(style_name='Polygon')
+                change_layer_style = None
             requests = {'layer name': layer,
                         'post feature': post_feature,
                         'recalc feature': recalc_feature,
@@ -277,13 +279,17 @@ class GlriGeoserver(object):
                           '\tRecalculate feature status: {recalc_status}\n'
                           '\tChange layer style status: {change_style_status}\n'
                           )
+            try:
+                change_style_status = change_layer_style.status_code
+            except AttributeError:
+                change_style_status = None
             config_lyr_report = report_str.format(layer_name=layer,
                                                   host_name=self.host,
                                                   workspace=gsl.workspace_name,
                                                   datastore=gsl.ds_name,
                                                   post_feature_status=post_feature.status_code,
                                                   recalc_status=recalc_feature.status_code,
-                                                  change_style_status=change_layer_style.status_code
+                                                  change_style_status=change_style_status
                                                   )
             print(config_lyr_report)
             lyr_config_requests.append(requests)
