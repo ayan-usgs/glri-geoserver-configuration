@@ -15,7 +15,8 @@ sld_path = os.path.normpath('{0}/files/slds/glri'.format(file_path))
 # create annual SLDs
 annual_slds = create_glri_sld(ANNUAL_ANIMATION_DIR, 'polygon',
                               xml_writepath=sld_path,
-                              pretty_print=True)
+                              pretty_print=True
+                              )
 
 # create monthly SLDs
 monthly_slds = create_glri_sld(MONTHLY_ANIMATION_DIR, 'polygon', 
