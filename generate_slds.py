@@ -12,7 +12,7 @@ from secure_params import ANNUAL_ANIMATION_DIR, MONTHLY_ANIMATION_DIR
 file_path = file_path = os.path.abspath(os.path.dirname(__file__))
 sld_path = os.path.normpath('{0}/files/slds/glri'.format(file_path))
 
-#create annual SLDs
+# create annual SLDs
 annual_slds = create_glri_sld(ANNUAL_ANIMATION_DIR, 'polygon',
                               xml_writepath=sld_path,
                               pretty_print=True)
