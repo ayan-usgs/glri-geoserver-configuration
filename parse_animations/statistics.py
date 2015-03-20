@@ -24,9 +24,7 @@ class PandasStats(object):
     
     def __init__(self, file_pathnames, column_names, skiprows, **kwargs):
         self.path_list = file_pathnames
-        #self.dlmt = kwargs.get('delimiter', '\t')
         self.headers = column_names
-        #self.cmnt = kwargs.get('comment', 'X')
         self.skip_rows = skiprows
         self.kwargs = {'comment':'#'}
         self.kwargs.update(kwargs)
