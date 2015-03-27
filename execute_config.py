@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # configure PRMS monthly layers
     monthly_datastore = c.INDIVIDUAL_DATASTORES[1]['datastore_name']
     config_glri_gs.config_layers(layers=c.GLRI_PRMS_MONTHLY_LAYERS,
-                                 layer_styles=c.GLRI_PRMS_SLDS,  # still need to make these
+                                 layer_styles=None,  # still need to make these
                                  projection=c.PRMS_CUSTOM_PROJECTION,
                                  datastore_name=monthly_datastore
                                  )
