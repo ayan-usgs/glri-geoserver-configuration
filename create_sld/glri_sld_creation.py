@@ -63,7 +63,8 @@ def create_geoserver_layers(gs_host, gs_user, gs_pwd, ws_name, ds_name, layer_na
 
 def create_glri_sld(directory, style, xml_writepath=SLD_PATH, extension='*.nhru', 
                     column_names=ANIMATION_HEADERS, percentiles=PERCENTILES, 
-                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS, pretty_print=False):
+                    colors=COLORS, attribute_units=ATTRIBUTE_UNITS, pretty_print=False,
+                    sld_name_suffix=None):
     """
     Create an SLD from animation files.
     
@@ -108,11 +109,14 @@ def create_glri_sld(directory, style, xml_writepath=SLD_PATH, extension='*.nhru'
                                     attribute_units=attribute_units,
                                     pretty_print=pretty_print
                                     )
-        sld_name = '%s' % attribute_name 
+        if sld_name_suffix is not None:
+            sld_name = '{0}_{1}'.format(attribute_name, sld_name_suffix)
+        else:
+            sld_name = '{0}'.format(attribute_name) 
         sld_data = {'sld_name': sld_name, 'sld_content': sld_content}
         slds.append(sld_data)
         if xml_writepath is not None:
-            xml_filepath =  '%s/%s.sld' % (xml_writepath, attribute_name)
+            xml_filepath =  '{0}/{1}.sld'.format(xml_writepath, sld_name)
             write_to_file(sld_content, xml_filepath)
     return slds
 
