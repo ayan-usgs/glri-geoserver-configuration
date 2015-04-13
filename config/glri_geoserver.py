@@ -169,7 +169,7 @@ class GlriGeoserver(object):
             ws_config_requests.append(setup_ws)
         return ws_config_requests
     
-    def config_styles(self, sld_path='/files/slds/glri/*.sld'):
+    def config_styles(self, sld_path='files/slds/glri/*.sld'):
         """
         Create SLDs within GeoServer.
         
@@ -179,7 +179,7 @@ class GlriGeoserver(object):
         
         """
         catalog = Catalog(self.host, self.user, self.password, True)
-        sld_path = '{0}{1}'.format(self.abs_path, sld_path)
+        sld_path = os.path.join(self.abs_path, sld_path)
         norm_sld_path = os.path.normpath(sld_path)
         sld_files = glob.glob(norm_sld_path)
         configured_styles = []
@@ -338,7 +338,7 @@ class GlriAfinch(object):
         config_ws = self.glri_config.config_workspaces(workspace_names, person, email)
         return config_ws
     
-    def config_afinch_styles(self, sld_path='/files/slds/afinch/*.sld'):
+    def config_afinch_styles(self, sld_path='files/slds/afinch/*.sld'):
         """
         Create SLDs within GeoServer.
         

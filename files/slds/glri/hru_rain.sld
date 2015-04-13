@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>hru_rain_bin_no_1</Name>
-          <Title>Less than or equal to 22.98 in</Title>
+          <Title>Less than or equal to 26.38 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>22.98</ogc:Literal>
+                <ogc:Literal>26.38</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_2</Name>
-          <Title>22.98 to 25.57 in</Title>
+          <Title>26.38 to 27.83 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>22.98</ogc:Literal>
+                <ogc:Literal>26.38</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>25.57</ogc:Literal>
+                <ogc:Literal>27.83</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_3</Name>
-          <Title>25.57 to 27.54 in</Title>
+          <Title>27.83 to 28.99 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>25.57</ogc:Literal>
+                <ogc:Literal>27.83</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>27.54</ogc:Literal>
+                <ogc:Literal>28.99</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_4</Name>
-          <Title>27.54 to 29.25 in</Title>
+          <Title>28.99 to 30.07 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>27.54</ogc:Literal>
+                <ogc:Literal>28.99</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>29.25</ogc:Literal>
+                <ogc:Literal>30.07</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_5</Name>
-          <Title>29.25 to 30.92 in</Title>
+          <Title>30.07 to 31.16 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>29.25</ogc:Literal>
+                <ogc:Literal>30.07</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>30.92</ogc:Literal>
+                <ogc:Literal>31.16</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_6</Name>
-          <Title>30.92 to 32.64 in</Title>
+          <Title>31.16 to 32.23 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>30.92</ogc:Literal>
+                <ogc:Literal>31.16</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>32.64</ogc:Literal>
+                <ogc:Literal>32.23</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_7</Name>
-          <Title>32.64 to 34.56 in</Title>
+          <Title>32.23 to 33.55 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>32.64</ogc:Literal>
+                <ogc:Literal>32.23</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>34.56</ogc:Literal>
+                <ogc:Literal>33.55</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_8</Name>
-          <Title>34.56 to 36.93 in</Title>
+          <Title>33.55 to 35.18 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>34.56</ogc:Literal>
+                <ogc:Literal>33.55</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>36.93</ogc:Literal>
+                <ogc:Literal>35.18</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_9</Name>
-          <Title>36.93 to 40.40 in</Title>
+          <Title>35.18 to 37.34 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>36.93</ogc:Literal>
+                <ogc:Literal>35.18</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>40.40</ogc:Literal>
+                <ogc:Literal>37.34</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>hru_rain_bin_no_10</Name>
-          <Title>Greater than 40.40 in</Title>
+          <Title>Greater than 37.34 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_rain</ogc:PropertyName>
-                <ogc:Literal>40.40</ogc:Literal>
+                <ogc:Literal>37.34</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

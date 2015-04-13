@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>tmaxf_bin_no_1</Name>
-          <Title>Less than or equal to 55.00 &#176;F</Title>
+          <Title>Less than or equal to 55.55 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>55.00</ogc:Literal>
+                <ogc:Literal>55.55</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_2</Name>
-          <Title>55.00 to 56.98 &#176;F</Title>
+          <Title>55.55 to 57.48 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>55.00</ogc:Literal>
+                <ogc:Literal>55.55</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>56.98</ogc:Literal>
+                <ogc:Literal>57.48</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_3</Name>
-          <Title>56.98 to 58.42 &#176;F</Title>
+          <Title>57.48 to 58.83 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>56.98</ogc:Literal>
+                <ogc:Literal>57.48</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>58.42</ogc:Literal>
+                <ogc:Literal>58.83</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_4</Name>
-          <Title>58.42 to 59.65 &#176;F</Title>
+          <Title>58.83 to 60.00 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>58.42</ogc:Literal>
+                <ogc:Literal>58.83</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>59.65</ogc:Literal>
+                <ogc:Literal>60.00</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_5</Name>
-          <Title>59.65 to 60.80 &#176;F</Title>
+          <Title>60.00 to 61.12 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>59.65</ogc:Literal>
+                <ogc:Literal>60.00</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>60.80</ogc:Literal>
+                <ogc:Literal>61.12</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_6</Name>
-          <Title>60.80 to 61.92 &#176;F</Title>
+          <Title>61.12 to 62.19 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>60.80</ogc:Literal>
+                <ogc:Literal>61.12</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>61.92</ogc:Literal>
+                <ogc:Literal>62.19</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_7</Name>
-          <Title>61.92 to 63.09 &#176;F</Title>
+          <Title>62.19 to 63.28 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>61.92</ogc:Literal>
+                <ogc:Literal>62.19</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>63.09</ogc:Literal>
+                <ogc:Literal>63.28</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_8</Name>
-          <Title>63.09 to 64.44 &#176;F</Title>
+          <Title>63.28 to 64.59 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>63.09</ogc:Literal>
+                <ogc:Literal>63.28</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>64.44</ogc:Literal>
+                <ogc:Literal>64.59</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_9</Name>
-          <Title>64.44 to 66.37 &#176;F</Title>
+          <Title>64.59 to 66.43 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>64.44</ogc:Literal>
+                <ogc:Literal>64.59</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>66.37</ogc:Literal>
+                <ogc:Literal>66.43</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>tmaxf_bin_no_10</Name>
-          <Title>Greater than 66.37 &#176;F</Title>
+          <Title>Greater than 66.43 &#176;F</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>tmaxf</ogc:PropertyName>
-                <ogc:Literal>66.37</ogc:Literal>
+                <ogc:Literal>66.43</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

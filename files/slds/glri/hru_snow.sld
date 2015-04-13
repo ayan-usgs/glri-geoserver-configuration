@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>hru_snow_bin_no_1</Name>
-          <Title>Less than or equal to 1.54 in</Title>
+          <Title>Less than or equal to 2.32 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>1.54</ogc:Literal>
+                <ogc:Literal>2.32</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_2</Name>
-          <Title>1.54 to 2.19 in</Title>
+          <Title>2.32 to 2.81 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>1.54</ogc:Literal>
+                <ogc:Literal>2.32</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>2.19</ogc:Literal>
+                <ogc:Literal>2.81</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_3</Name>
-          <Title>2.19 to 2.73 in</Title>
+          <Title>2.81 to 3.18 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>2.19</ogc:Literal>
+                <ogc:Literal>2.81</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>2.73</ogc:Literal>
+                <ogc:Literal>3.18</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_4</Name>
-          <Title>2.73 to 3.24 in</Title>
+          <Title>3.18 to 3.52 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>2.73</ogc:Literal>
+                <ogc:Literal>3.18</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>3.24</ogc:Literal>
+                <ogc:Literal>3.52</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_5</Name>
-          <Title>3.24 to 3.75 in</Title>
+          <Title>3.52 to 3.84 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>3.24</ogc:Literal>
+                <ogc:Literal>3.52</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>3.75</ogc:Literal>
+                <ogc:Literal>3.84</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_6</Name>
-          <Title>3.75 to 4.30 in</Title>
+          <Title>3.84 to 4.16 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>3.75</ogc:Literal>
+                <ogc:Literal>3.84</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>4.30</ogc:Literal>
+                <ogc:Literal>4.16</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_7</Name>
-          <Title>4.30 to 4.93 in</Title>
+          <Title>4.16 to 4.55 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>4.30</ogc:Literal>
+                <ogc:Literal>4.16</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>4.93</ogc:Literal>
+                <ogc:Literal>4.55</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_8</Name>
-          <Title>4.93 to 5.71 in</Title>
+          <Title>4.55 to 5.07 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>4.93</ogc:Literal>
+                <ogc:Literal>4.55</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>5.71</ogc:Literal>
+                <ogc:Literal>5.07</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_9</Name>
-          <Title>5.71 to 6.91 in</Title>
+          <Title>5.07 to 5.90 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>5.71</ogc:Literal>
+                <ogc:Literal>5.07</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>6.91</ogc:Literal>
+                <ogc:Literal>5.90</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>hru_snow_bin_no_10</Name>
-          <Title>Greater than 6.91 in</Title>
+          <Title>Greater than 5.90 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_snow</ogc:PropertyName>
-                <ogc:Literal>6.91</ogc:Literal>
+                <ogc:Literal>5.90</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

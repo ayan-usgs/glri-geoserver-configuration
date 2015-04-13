@@ -6,13 +6,13 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>recharge_bin_no_1</Name>
-          <Title>Equal to 0.000 in</Title>
+          <Title>Less than or equal to 0.033 in</Title>
           <ogc:Filter>
             <ogc:And>
-              <ogc:PropertyIsEqualTo>
+              <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>0.000</ogc:Literal>
-              </ogc:PropertyIsEqualTo>
+                <ogc:Literal>0.033</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
                 <ogc:Literal>47</ogc:Literal>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_2</Name>
-          <Title>0.000 to 0.355 in</Title>
+          <Title>0.033 to 0.796 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>0.000</ogc:Literal>
+                <ogc:Literal>0.033</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>0.355</ogc:Literal>
+                <ogc:Literal>0.796</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_3</Name>
-          <Title>0.355 to 1.55 in</Title>
+          <Title>0.796 to 1.96 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>0.355</ogc:Literal>
+                <ogc:Literal>0.796</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>1.55</ogc:Literal>
+                <ogc:Literal>1.96</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_4</Name>
-          <Title>1.55 to 2.93 in</Title>
+          <Title>1.96 to 3.27 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>1.55</ogc:Literal>
+                <ogc:Literal>1.96</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>2.93</ogc:Literal>
+                <ogc:Literal>3.27</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_5</Name>
-          <Title>2.93 to 4.18 in</Title>
+          <Title>3.27 to 4.47 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>2.93</ogc:Literal>
+                <ogc:Literal>3.27</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>4.18</ogc:Literal>
+                <ogc:Literal>4.47</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_6</Name>
-          <Title>4.18 to 5.55 in</Title>
+          <Title>4.47 to 5.56 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>4.18</ogc:Literal>
+                <ogc:Literal>4.47</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>5.55</ogc:Literal>
+                <ogc:Literal>5.56</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_7</Name>
-          <Title>5.55 to 7.25 in</Title>
+          <Title>5.56 to 6.91 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>5.55</ogc:Literal>
+                <ogc:Literal>5.56</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>7.25</ogc:Literal>
+                <ogc:Literal>6.91</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_8</Name>
-          <Title>7.25 to 9.70 in</Title>
+          <Title>6.91 to 9.44 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>7.25</ogc:Literal>
+                <ogc:Literal>6.91</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>9.70</ogc:Literal>
+                <ogc:Literal>9.44</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_9</Name>
-          <Title>9.70 to 13.81 in</Title>
+          <Title>9.44 to 13.51 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>9.70</ogc:Literal>
+                <ogc:Literal>9.44</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>13.81</ogc:Literal>
+                <ogc:Literal>13.51</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>recharge_bin_no_10</Name>
-          <Title>Greater than 13.81 in</Title>
+          <Title>Greater than 13.51 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>recharge</ogc:PropertyName>
-                <ogc:Literal>13.81</ogc:Literal>
+                <ogc:Literal>13.51</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

@@ -15,7 +15,7 @@ PERCENTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
 FILE_PATH = os.path.abspath(os.path.dirname(__file__))
 ABS_PATH = os.path.abspath(os.path.dirname(FILE_PATH))
-SLD_PATH = os.path.normpath('{0}/files/slds/glri'.format(ABS_PATH))
+SLD_PATH = os.path.join(ABS_PATH, 'files/slds/glri')
 
 
 def create_layer_names(directory_path, extension='*.nhru', existing_lyrs=None):

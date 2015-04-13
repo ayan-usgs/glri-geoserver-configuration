@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>snowmelt_bin_no_1</Name>
-          <Title>Less than or equal to 1.91 in</Title>
+          <Title>Less than or equal to 3.01 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>1.91</ogc:Literal>
+                <ogc:Literal>3.01</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_2</Name>
-          <Title>1.91 to 2.79 in</Title>
+          <Title>3.01 to 3.70 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>1.91</ogc:Literal>
+                <ogc:Literal>3.01</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>2.79</ogc:Literal>
+                <ogc:Literal>3.70</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_3</Name>
-          <Title>2.79 to 3.52 in</Title>
+          <Title>3.70 to 4.18 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>2.79</ogc:Literal>
+                <ogc:Literal>3.70</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>3.52</ogc:Literal>
+                <ogc:Literal>4.18</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_4</Name>
-          <Title>3.52 to 4.20 in</Title>
+          <Title>4.18 to 4.60 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>3.52</ogc:Literal>
+                <ogc:Literal>4.18</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>4.20</ogc:Literal>
+                <ogc:Literal>4.60</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_5</Name>
-          <Title>4.20 to 4.89 in</Title>
+          <Title>4.60 to 4.99 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>4.20</ogc:Literal>
+                <ogc:Literal>4.60</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>4.89</ogc:Literal>
+                <ogc:Literal>4.99</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_6</Name>
-          <Title>4.89 to 5.62 in</Title>
+          <Title>4.99 to 5.41 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>4.89</ogc:Literal>
+                <ogc:Literal>4.99</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>5.62</ogc:Literal>
+                <ogc:Literal>5.41</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_7</Name>
-          <Title>5.62 to 6.45 in</Title>
+          <Title>5.41 to 5.91 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>5.62</ogc:Literal>
+                <ogc:Literal>5.41</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>6.45</ogc:Literal>
+                <ogc:Literal>5.91</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_8</Name>
-          <Title>6.45 to 7.52 in</Title>
+          <Title>5.91 to 6.60 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>6.45</ogc:Literal>
+                <ogc:Literal>5.91</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>7.52</ogc:Literal>
+                <ogc:Literal>6.60</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_9</Name>
-          <Title>7.52 to 9.12 in</Title>
+          <Title>6.60 to 7.63 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>7.52</ogc:Literal>
+                <ogc:Literal>6.60</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>9.12</ogc:Literal>
+                <ogc:Literal>7.63</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>snowmelt_bin_no_10</Name>
-          <Title>Greater than 9.12 in</Title>
+          <Title>Greater than 7.63 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>snowmelt</ogc:PropertyName>
-                <ogc:Literal>9.12</ogc:Literal>
+                <ogc:Literal>7.63</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
