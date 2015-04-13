@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>pkwater_equiv_bin_no_1</Name>
-          <Title>Less than or equal to 0.380 in</Title>
+          <Title>Less than or equal to 0.775 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.380</ogc:Literal>
+                <ogc:Literal>0.775</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_2</Name>
-          <Title>0.380 to 0.579 in</Title>
+          <Title>0.775 to 0.946 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.380</ogc:Literal>
+                <ogc:Literal>0.775</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.579</ogc:Literal>
+                <ogc:Literal>0.946</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_3</Name>
-          <Title>0.579 to 0.767 in</Title>
+          <Title>0.946 to 1.10 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.579</ogc:Literal>
+                <ogc:Literal>0.946</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.767</ogc:Literal>
+                <ogc:Literal>1.10</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_4</Name>
-          <Title>0.767 to 0.968 in</Title>
+          <Title>1.10 to 1.25 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.767</ogc:Literal>
+                <ogc:Literal>1.10</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.968</ogc:Literal>
+                <ogc:Literal>1.25</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_5</Name>
-          <Title>0.968 to 1.20 in</Title>
+          <Title>1.25 to 1.41 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>0.968</ogc:Literal>
+                <ogc:Literal>1.25</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.20</ogc:Literal>
+                <ogc:Literal>1.41</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_6</Name>
-          <Title>1.20 to 1.50 in</Title>
+          <Title>1.41 to 1.59 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.20</ogc:Literal>
+                <ogc:Literal>1.41</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.50</ogc:Literal>
+                <ogc:Literal>1.59</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_7</Name>
-          <Title>1.50 to 1.90 in</Title>
+          <Title>1.59 to 1.82 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.50</ogc:Literal>
+                <ogc:Literal>1.59</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.90</ogc:Literal>
+                <ogc:Literal>1.82</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_8</Name>
-          <Title>1.90 to 2.51 in</Title>
+          <Title>1.82 to 2.20 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>1.90</ogc:Literal>
+                <ogc:Literal>1.82</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>2.51</ogc:Literal>
+                <ogc:Literal>2.20</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_9</Name>
-          <Title>2.51 to 3.65 in</Title>
+          <Title>2.20 to 2.93 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>2.51</ogc:Literal>
+                <ogc:Literal>2.20</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>3.65</ogc:Literal>
+                <ogc:Literal>2.93</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>pkwater_equiv_bin_no_10</Name>
-          <Title>Greater than 3.65 in</Title>
+          <Title>Greater than 2.93 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>pkwater_equiv</ogc:PropertyName>
-                <ogc:Literal>3.65</ogc:Literal>
+                <ogc:Literal>2.93</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

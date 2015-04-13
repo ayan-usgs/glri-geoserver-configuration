@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>hru_streamflow_out_bin_no_1</Name>
-          <Title>Less than or equal to 0.929 cfs</Title>
+          <Title>Less than or equal to 1.07 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>0.929</ogc:Literal>
+                <ogc:Literal>1.07</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_2</Name>
-          <Title>0.929 to 3.40 cfs</Title>
+          <Title>1.07 to 3.79 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>0.929</ogc:Literal>
+                <ogc:Literal>1.07</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>3.40</ogc:Literal>
+                <ogc:Literal>3.79</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_3</Name>
-          <Title>3.40 to 7.52 cfs</Title>
+          <Title>3.79 to 7.96 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>3.40</ogc:Literal>
+                <ogc:Literal>3.79</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>7.52</ogc:Literal>
+                <ogc:Literal>7.96</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_4</Name>
-          <Title>7.52 to 14.06 cfs</Title>
+          <Title>7.96 to 14.70 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>7.52</ogc:Literal>
+                <ogc:Literal>7.96</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>14.06</ogc:Literal>
+                <ogc:Literal>14.70</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_5</Name>
-          <Title>14.06 to 23.57 cfs</Title>
+          <Title>14.70 to 24.86 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>14.06</ogc:Literal>
+                <ogc:Literal>14.70</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>23.57</ogc:Literal>
+                <ogc:Literal>24.86</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_6</Name>
-          <Title>23.57 to 37.54 cfs</Title>
+          <Title>24.86 to 38.81 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>23.57</ogc:Literal>
+                <ogc:Literal>24.86</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>37.54</ogc:Literal>
+                <ogc:Literal>38.81</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_7</Name>
-          <Title>37.54 to 58.56 cfs</Title>
+          <Title>38.81 to 59.58 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>37.54</ogc:Literal>
+                <ogc:Literal>38.81</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>58.56</ogc:Literal>
+                <ogc:Literal>59.58</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_8</Name>
-          <Title>58.56 to 93.61 cfs</Title>
+          <Title>59.58 to 93.50 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>58.56</ogc:Literal>
+                <ogc:Literal>59.58</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>93.61</ogc:Literal>
+                <ogc:Literal>93.50</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_9</Name>
-          <Title>93.61 to 167.06 cfs</Title>
+          <Title>93.50 to 165.22 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>93.61</ogc:Literal>
+                <ogc:Literal>93.50</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>167.06</ogc:Literal>
+                <ogc:Literal>165.22</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>hru_streamflow_out_bin_no_10</Name>
-          <Title>Greater than 167.06 cfs</Title>
+          <Title>Greater than 165.22 cfs</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_streamflow_out</ogc:PropertyName>
-                <ogc:Literal>167.06</ogc:Literal>
+                <ogc:Literal>165.22</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

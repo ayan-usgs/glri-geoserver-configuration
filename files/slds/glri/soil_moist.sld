@@ -27,7 +27,7 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_2</Name>
-          <Title>0.129 to 0.393 in</Title>
+          <Title>0.129 to 0.386 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
@@ -36,7 +36,7 @@
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>0.393</ogc:Literal>
+                <ogc:Literal>0.386</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_3</Name>
-          <Title>0.393 to 0.762 in</Title>
+          <Title>0.386 to 0.756 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>0.393</ogc:Literal>
+                <ogc:Literal>0.386</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>0.762</ogc:Literal>
+                <ogc:Literal>0.756</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_4</Name>
-          <Title>0.762 to 1.26 in</Title>
+          <Title>0.756 to 1.28 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>0.762</ogc:Literal>
+                <ogc:Literal>0.756</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>1.26</ogc:Literal>
+                <ogc:Literal>1.28</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_5</Name>
-          <Title>1.26 to 1.64 in</Title>
+          <Title>1.28 to 1.65 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>1.26</ogc:Literal>
+                <ogc:Literal>1.28</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>1.64</ogc:Literal>
+                <ogc:Literal>1.65</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,12 +127,12 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_6</Name>
-          <Title>1.64 to 2.02 in</Title>
+          <Title>1.65 to 2.02 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>1.64</ogc:Literal>
+                <ogc:Literal>1.65</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
@@ -152,7 +152,7 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_7</Name>
-          <Title>2.02 to 2.48 in</Title>
+          <Title>2.02 to 2.44 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
@@ -161,7 +161,7 @@
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>2.48</ogc:Literal>
+                <ogc:Literal>2.44</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_8</Name>
-          <Title>2.48 to 3.51 in</Title>
+          <Title>2.44 to 3.47 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>2.48</ogc:Literal>
+                <ogc:Literal>2.44</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>3.51</ogc:Literal>
+                <ogc:Literal>3.47</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_9</Name>
-          <Title>3.51 to 6.04 in</Title>
+          <Title>3.47 to 5.98 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>3.51</ogc:Literal>
+                <ogc:Literal>3.47</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>6.04</ogc:Literal>
+                <ogc:Literal>5.98</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>soil_moist_bin_no_10</Name>
-          <Title>Greater than 6.04 in</Title>
+          <Title>Greater than 5.98 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>soil_moist</ogc:PropertyName>
-                <ogc:Literal>6.04</ogc:Literal>
+                <ogc:Literal>5.98</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

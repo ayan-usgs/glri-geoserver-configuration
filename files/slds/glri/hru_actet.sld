@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>hru_actet_bin_no_1</Name>
-          <Title>Less than or equal to 12.80 in</Title>
+          <Title>Less than or equal to 13.32 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>12.80</ogc:Literal>
+                <ogc:Literal>13.32</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_2</Name>
-          <Title>12.80 to 15.77 in</Title>
+          <Title>13.32 to 16.25 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>12.80</ogc:Literal>
+                <ogc:Literal>13.32</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>15.77</ogc:Literal>
+                <ogc:Literal>16.25</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_3</Name>
-          <Title>15.77 to 17.91 in</Title>
+          <Title>16.25 to 18.54 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>15.77</ogc:Literal>
+                <ogc:Literal>16.25</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>17.91</ogc:Literal>
+                <ogc:Literal>18.54</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_4</Name>
-          <Title>17.91 to 19.66 in</Title>
+          <Title>18.54 to 20.26 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>17.91</ogc:Literal>
+                <ogc:Literal>18.54</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>19.66</ogc:Literal>
+                <ogc:Literal>20.26</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_5</Name>
-          <Title>19.66 to 21.20 in</Title>
+          <Title>20.26 to 21.65 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>19.66</ogc:Literal>
+                <ogc:Literal>20.26</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>21.20</ogc:Literal>
+                <ogc:Literal>21.65</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_6</Name>
-          <Title>21.20 to 22.66 in</Title>
+          <Title>21.65 to 22.85 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>21.20</ogc:Literal>
+                <ogc:Literal>21.65</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>22.66</ogc:Literal>
+                <ogc:Literal>22.85</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_7</Name>
-          <Title>22.66 to 24.13 in</Title>
+          <Title>22.85 to 24.08 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>22.66</ogc:Literal>
+                <ogc:Literal>22.85</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>24.13</ogc:Literal>
+                <ogc:Literal>24.08</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_8</Name>
-          <Title>24.13 to 25.80 in</Title>
+          <Title>24.08 to 25.50 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>24.13</ogc:Literal>
+                <ogc:Literal>24.08</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>25.80</ogc:Literal>
+                <ogc:Literal>25.50</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_9</Name>
-          <Title>25.80 to 28.04 in</Title>
+          <Title>25.50 to 27.28 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>25.80</ogc:Literal>
+                <ogc:Literal>25.50</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>28.04</ogc:Literal>
+                <ogc:Literal>27.28</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>hru_actet_bin_no_10</Name>
-          <Title>Greater than 28.04 in</Title>
+          <Title>Greater than 27.28 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_actet</ogc:PropertyName>
-                <ogc:Literal>28.04</ogc:Literal>
+                <ogc:Literal>27.28</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

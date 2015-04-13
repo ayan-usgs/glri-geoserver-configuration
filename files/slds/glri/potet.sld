@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>potet_bin_no_1</Name>
-          <Title>Less than or equal to 27.02 in</Title>
+          <Title>Less than or equal to 27.80 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>27.02</ogc:Literal>
+                <ogc:Literal>27.80</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_2</Name>
-          <Title>27.02 to 29.26 in</Title>
+          <Title>27.80 to 29.91 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>27.02</ogc:Literal>
+                <ogc:Literal>27.80</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>29.26</ogc:Literal>
+                <ogc:Literal>29.91</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_3</Name>
-          <Title>29.26 to 30.93 in</Title>
+          <Title>29.91 to 31.49 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>29.26</ogc:Literal>
+                <ogc:Literal>29.91</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>30.93</ogc:Literal>
+                <ogc:Literal>31.49</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_4</Name>
-          <Title>30.93 to 32.37 in</Title>
+          <Title>31.49 to 32.88 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>30.93</ogc:Literal>
+                <ogc:Literal>31.49</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>32.37</ogc:Literal>
+                <ogc:Literal>32.88</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_5</Name>
-          <Title>32.37 to 33.75 in</Title>
+          <Title>32.88 to 34.18 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>32.37</ogc:Literal>
+                <ogc:Literal>32.88</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>33.75</ogc:Literal>
+                <ogc:Literal>34.18</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_6</Name>
-          <Title>33.75 to 35.15 in</Title>
+          <Title>34.18 to 35.46 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>33.75</ogc:Literal>
+                <ogc:Literal>34.18</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>35.15</ogc:Literal>
+                <ogc:Literal>35.46</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_7</Name>
-          <Title>35.15 to 36.66 in</Title>
+          <Title>35.46 to 36.87 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>35.15</ogc:Literal>
+                <ogc:Literal>35.46</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>36.66</ogc:Literal>
+                <ogc:Literal>36.87</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_8</Name>
-          <Title>36.66 to 38.51 in</Title>
+          <Title>36.87 to 38.52 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>36.66</ogc:Literal>
+                <ogc:Literal>36.87</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>38.51</ogc:Literal>
+                <ogc:Literal>38.52</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_9</Name>
-          <Title>38.51 to 41.26 in</Title>
+          <Title>38.52 to 40.96 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>38.51</ogc:Literal>
+                <ogc:Literal>38.52</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>41.26</ogc:Literal>
+                <ogc:Literal>40.96</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>potet_bin_no_10</Name>
-          <Title>Greater than 41.26 in</Title>
+          <Title>Greater than 40.96 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>potet</ogc:PropertyName>
-                <ogc:Literal>41.26</ogc:Literal>
+                <ogc:Literal>40.96</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>

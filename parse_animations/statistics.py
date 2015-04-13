@@ -29,7 +29,7 @@ class PandasStats(object):
         self.kwargs = {'comment':'#'}
         self.kwargs.update(kwargs)
     
-    def load_file_data(self):
+    def load_file_data(self, sep='\t', index_col=False):
         """
         Create a series of dataframes from the list
         of files provided.
@@ -39,6 +39,8 @@ class PandasStats(object):
         dataframes = []
         for file_pathname in self.path_list:
             dataframe = read_csv(filepath_or_buffer=file_pathname,
+                                 sep=sep,
+                                 index_col=index_col,
                                  names=self.headers,
                                  skiprows=self.skip_rows,
                                  **self.kwargs

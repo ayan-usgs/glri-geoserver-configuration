@@ -6,12 +6,12 @@
       <FeatureTypeStyle>
         <Rule>
           <Name>hru_ppt_bin_no_1</Name>
-          <Title>Less than or equal to 27.21 in</Title>
+          <Title>Less than or equal to 31.13 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>27.21</ogc:Literal>
+                <ogc:Literal>31.13</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -27,16 +27,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_2</Name>
-          <Title>27.21 to 29.81 in</Title>
+          <Title>31.13 to 32.43 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>27.21</ogc:Literal>
+                <ogc:Literal>31.13</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>29.81</ogc:Literal>
+                <ogc:Literal>32.43</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -52,16 +52,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_3</Name>
-          <Title>29.81 to 31.74 in</Title>
+          <Title>32.43 to 33.41 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>29.81</ogc:Literal>
+                <ogc:Literal>32.43</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>31.74</ogc:Literal>
+                <ogc:Literal>33.41</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -77,16 +77,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_4</Name>
-          <Title>31.74 to 33.41 in</Title>
+          <Title>33.41 to 34.29 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>31.74</ogc:Literal>
+                <ogc:Literal>33.41</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>33.41</ogc:Literal>
+                <ogc:Literal>34.29</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -102,16 +102,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_5</Name>
-          <Title>33.41 to 35.04 in</Title>
+          <Title>34.29 to 35.17 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>33.41</ogc:Literal>
+                <ogc:Literal>34.29</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>35.04</ogc:Literal>
+                <ogc:Literal>35.17</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -127,16 +127,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_6</Name>
-          <Title>35.04 to 36.71 in</Title>
+          <Title>35.17 to 36.12 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>35.04</ogc:Literal>
+                <ogc:Literal>35.17</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>36.71</ogc:Literal>
+                <ogc:Literal>36.12</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -152,16 +152,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_7</Name>
-          <Title>36.71 to 38.57 in</Title>
+          <Title>36.12 to 37.24 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>36.71</ogc:Literal>
+                <ogc:Literal>36.12</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>38.57</ogc:Literal>
+                <ogc:Literal>37.24</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -177,16 +177,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_8</Name>
-          <Title>38.57 to 40.85 in</Title>
+          <Title>37.24 to 38.58 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>38.57</ogc:Literal>
+                <ogc:Literal>37.24</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>40.85</ogc:Literal>
+                <ogc:Literal>38.58</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -202,16 +202,16 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_9</Name>
-          <Title>40.85 to 44.10 in</Title>
+          <Title>38.58 to 40.55 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>40.85</ogc:Literal>
+                <ogc:Literal>38.58</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>44.10</ogc:Literal>
+                <ogc:Literal>40.55</ogc:Literal>
               </ogc:PropertyIsLessThanOrEqualTo>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
@@ -227,12 +227,12 @@
         </Rule>
         <Rule>
           <Name>hru_ppt_bin_no_10</Name>
-          <Title>Greater than 44.10 in</Title>
+          <Title>Greater than 40.55 in</Title>
           <ogc:Filter>
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>hru_ppt</ogc:PropertyName>
-                <ogc:Literal>44.10</ogc:Literal>
+                <ogc:Literal>40.55</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
               <ogc:PropertyIsNotEqualTo>
                 <ogc:PropertyName>GRIDCODE</ogc:PropertyName>
