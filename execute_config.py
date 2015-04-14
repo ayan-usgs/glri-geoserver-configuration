@@ -35,13 +35,11 @@ if __name__ == '__main__':
     # configure datastores
     config_glri_gs.config_datastores(c.INDIVIDUAL_DATASTORES)
     # configure PRMS annual layers
-    annual_datastore = c.INDIVIDUAL_DATASTORES[0]['datastore_name']
-
-    config_glri_gs.config_layers(layers=c.GLRI_PRMS_LAYERS, 
-                                 layer_styles=c.GLRI_PRMS_SLDS, 
+    new_annual_datastore = c.INDIVIDUAL_DATASTORES[0]['datastore_name']
+    config_glri_gs.config_layers(layers=c.GLRI_PRMS_ANNUAL_LAYERS,
+                                 layer_styles=c.GLRI_PRMS_SLDS,
                                  projection=c.PRMS_CUSTOM_PROJECTION,
-                                 datastore_name=annual_datastore
-                                 )
+                                 datastore_name=new_annual_datastore)
     # configure PRMS monthly layers
     monthly_datastore = c.INDIVIDUAL_DATASTORES[1]['datastore_name']
     config_glri_gs.config_layers(layers=c.GLRI_PRMS_MONTHLY_LAYERS,
