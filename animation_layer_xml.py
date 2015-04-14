@@ -2,6 +2,23 @@
 Created on Apr 14, 2015
 
 @author: ayan
+
+
+    This script must be run as tomcat to
+    be effective. Remember to restart
+    the geoserver instance after running
+    this script.
+    
+    Example:
+        python animation_layer_xml.py <directory with the incorrect xml files>
+        tomcat restart geoserver
+        
+    This script should be run after setting
+    PRMS animation layer. It is a temporary
+    measure until the underlying problem is 
+    fixed by a Java developer.
+    
+    
 '''
 import os
 import sys
@@ -32,23 +49,6 @@ def set_timestep_records_to_record_count(xml_file):
 
 
 if __name__ == '__main__':
-    
-    """
-    This script must be run as tomcat to
-    be effective. Remember to restart
-    the geoserver instance after running
-    this script.
-    
-    Example:
-        python animation_layer_xml.py <directory with the incorrect xml files>
-        tomcat restart geoserver
-        
-    This script should be run after setting
-    PRMS animation layer. It is a temporary
-    measure until the underlying problem is 
-    fixed by a Java developer.
-    
-    """
     
     script, file_directory = sys.argv
     xml_files = list_xml_files(file_directory)
