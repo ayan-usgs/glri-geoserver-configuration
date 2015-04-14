@@ -14,9 +14,11 @@ Created on Apr 14, 2015
         tomcat restart geoserver
         
     This script should be run after setting
-    PRMS animation layer. It is a temporary
+    PRMS animation layer. The script will replace
+    instances of -1 in timeStepRecordCount element
+    with the number of records. It is a temporary
     measure until the underlying problem is 
-    fixed by a Java developer.
+    fixed by a Java developer. 
     
     
 '''
@@ -34,10 +36,12 @@ def list_xml_files(file_directory, file_name='*.xml'):
 
 def set_timestep_records_to_record_count(xml_file):
     tree = ET.parse(xml_file)
-    root = tree.getroot()
-    record_count = root.find('.//recordCount')
+    root = tree.getroot()  # pRMSAnimationFileMetaData is the root element
+    # find recordCount elements relative to the root element
+    record_count = root.find('./recordCount')
     record_count_value = int(record_count.text)
-    timestep_record_count = root.find('.//timeStepRecordCount')
+    # find timeStepRecordCount elements relative to the root
+    timestep_record_count = root.find('./timeStepRecordCount')
     timestep_record_count_value = int(timestep_record_count.text)
     if timestep_record_count_value == -1:
         new_timestep_record_value = str(record_count_value)
